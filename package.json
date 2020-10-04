@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "lodash.startcase": "4.4.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.3"
