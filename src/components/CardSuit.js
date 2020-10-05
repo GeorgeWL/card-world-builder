@@ -21,9 +21,14 @@ function suitToImage(suit, props) {
   }
 }
 
-const CardSuit = ({ suit }) =>
-  suitToImage(suit, {
-    title: startCase(suit),
-    alt: startCase(suit)
-  });
+const CardSuit = ({ suit, size = "50px" }) => (
+  <span>
+    {suitToImage(suit, {
+      title: startCase(suit),
+      alt: startCase(suit),
+      height: size,
+      width: size
+    })}
+  </span>
+);
 export default CardSuit;

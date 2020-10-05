@@ -24,7 +24,7 @@ const CardCorner = ({ suit, number }) => (
       textTransform: "uppercase"
     }}
   >
-    {NUMBER_MAP[number]}
+    <span>{NUMBER_MAP[number]}</span>
     <CardSuit suit={suit} />
   </div>
 );
