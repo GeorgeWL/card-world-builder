@@ -1,0 +1,40 @@
+
+$duration:4s;
+
+.loader {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5px 5px;
+  grid-template-rows: 5px 5px;
+  gap: 2.5px 2.5px;
+  grid-template-areas:
+    ". ."
+    ". .";
+  span{
+    animation: anim-rotate $duration infinite ease;
+
+    &:nth-child(1),
+    &:nth-child(4){
+      animation-direction: reverse;
+    }
+    svg{
+      animation: anim-rotate $duration infinite ease;
+    }
+  }
+
+}
+
+@keyframes spin{
+  0% { transform: rotate(0deg); }
+
+  50%{
+    transform:rotate(720deg);
+  }
+}
+@keyframes anim-rotate {
+  0% { transform: rotate(0deg); }
+  50% { 
+    transform: rotate(360deg);
+  opacity:.5;
+ }
+}

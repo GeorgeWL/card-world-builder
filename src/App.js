@@ -1,5 +1,6 @@
 import React from "react";
 import CardCorner from "./components/CardCorner";
+import LoadingSpinner from "./components/LoadingSpinner";
 import "./styles.css";
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
       Steps
+      <LoadingSpinner />
       <CardCorner number={11} suit="heart" />
       <ol>
         <li>Select a Genre / Choose for me</li>
