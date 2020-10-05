@@ -1,0 +1,31 @@
+.button{
+  border:none;
+  outline:none;
+  padding:5px 10px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  cursor: pointer;
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;  position: relative;
+    height: 100%;
+    width: 100%;
+    flex: 0 1 auto;
+    max-height: 100%;
+  }
+  &:hover{
+    box-shadow: 0 4px 30px rgba(163,196,230,0.52);
+  }
+  &:active{
+    box-shadow:0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 rgba(0, 0, 0, 0.04);
+  }
+}
+.primary{
+  background:white;
+  box-shadow:   0 6px 20px rgba(163,196,230,0.4)
+}

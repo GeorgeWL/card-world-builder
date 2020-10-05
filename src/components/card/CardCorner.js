@@ -25,7 +25,7 @@ const CardCorner = ({ suit, number }) => (
     }}
   >
     <span>{NUMBER_MAP[number]}</span>
-    <CardSuit suit={suit} />
+    <CardSuit suit={suit} height="35px" />
   </div>
 );
 export default CardCorner;

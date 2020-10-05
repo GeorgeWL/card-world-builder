@@ -5,7 +5,6 @@ import { ReactComponent as Spade } from "../../assets/noun_spade_suit.svg";
 import { ReactComponent as Club } from "../../assets/noun_club_suit.svg";
 import startCase from "lodash.startcase";
 function suitToImage(suit, props) {
-  console.log({ props, suit });
   switch (suit) {
     case "heart":
       return <Heart {...props} />;
@@ -21,13 +20,12 @@ function suitToImage(suit, props) {
   }
 }
 
-const CardSuit = ({ suit, size = "50px" }) => (
+const CardSuit = ({ suit, ...rest }) => (
   <span>
     {suitToImage(suit, {
       title: startCase(suit),
       alt: startCase(suit),
-      height: size,
-      width: size
+      ...rest
     })}
   </span>
 );
