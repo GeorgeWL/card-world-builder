@@ -1,5 +1,5 @@
 import React from "react";
-import CardCorner from "./components/CardCorner";
+import CardCorner from "./components/card/CardCorner";
 import LoadingSpinner from "./components/LoadingSpinner";
 import "./styles.css";
 
