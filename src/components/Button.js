@@ -8,13 +8,16 @@ const Button = ({
   onClick,
   id,
   dataTags,
-  style = "primary"
+  style = "primary",
+  active
 }) => (
   <button
     id={id}
     {...dataTags}
     onClick={onClick}
-    className={classNames(classes.button, classes[style])}
+    className={classNames(classes.button, classes[style], {
+      [classes.active]: active
+    })}
   >
     {prefix && <div>{prefix}</div>}
     <div>{children}</div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./components/Button";
+import ButtonSet from "./components/ButtonSet";
 import CardCorner from "./components/card/CardCorner";
 import CardSuit from "./components/card/CardSuit";
 import LoadingSpinner from "./components/LoadingSpinner";
@@ -13,12 +14,40 @@ export default function App() {
       Steps
       <LoadingSpinner />
       <CardCorner number={11} suit="heart" />
-      <Button
-        prefix={<CardSuit width="25px" suit="heart" />}
-        suffix={<CardSuit width="25px" suit="heart" />}
-      >
-        Test
-      </Button>
+      <ButtonSet onChange={(id) => console.log(id)}>
+        <Button
+          prefix={<CardSuit width="25px" suit="heart" />}
+          suffix={<CardSuit width="25px" suit="heart" />}
+          id="heart"
+          dataTags={{ "data-cy": "cypress" }}
+        >
+          Test
+        </Button>
+        <Button
+          prefix={<CardSuit width="25px" suit="spade" />}
+          suffix={<CardSuit width="25px" suit="spade" />}
+          id="spade"
+          dataTags={{ "data-cy": "cypress" }}
+        >
+          Test
+        </Button>
+        <Button
+          prefix={<CardSuit width="25px" suit="diamond" />}
+          suffix={<CardSuit width="25px" suit="diamond" />}
+          id="diamond"
+          dataTags={{ "data-cy": "cypress" }}
+        >
+          Test
+        </Button>
+        <Button
+          prefix={<CardSuit width="25px" suit="club" />}
+          suffix={<CardSuit width="25px" suit="club" />}
+          id="club"
+          dataTags={{ "data-cy": "cypress" }}
+        >
+          Test
+        </Button>
+      </ButtonSet>
       <ol>
         <li>Select a Genre / Choose for me</li>
         <li>Generate Characters</li>
