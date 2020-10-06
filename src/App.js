@@ -5,6 +5,7 @@ import CardCorner from "./components/card/CardCorner";
 import CardFace from "./components/card/CardFace";
 import CardSuit from "./components/card/CardSuit";
 import LoadingSpinner from "./components/LoadingSpinner";
+import StepOne from "./components/steps/StepOne";
 import "./styles.css";
 
 export default function App() {
@@ -15,43 +16,10 @@ export default function App() {
       Steps
       <LoadingSpinner />
       <CardCorner number={11} suit="heart" />
-      <ButtonSet onChange={(id) => console.log(id)}>
-        <Button
-          prefix={<CardSuit width="25px" suit="heart" />}
-          suffix={<CardSuit width="25px" suit="heart" />}
-          id="heart"
-          dataTags={{ "data-cy": "cypress" }}
-        >
-          Test
-        </Button>
-        <Button
-          prefix={<CardSuit width="25px" suit="spade" />}
-          suffix={<CardSuit width="25px" suit="spade" />}
-          id="spade"
-          dataTags={{ "data-cy": "cypress" }}
-        >
-          Test
-        </Button>
-        <Button
-          prefix={<CardSuit width="25px" suit="diamond" />}
-          suffix={<CardSuit width="25px" suit="diamond" />}
-          id="diamond"
-          dataTags={{ "data-cy": "cypress" }}
-        >
-          Test
-        </Button>
-        <Button
-          prefix={<CardSuit width="25px" suit="club" />}
-          suffix={<CardSuit width="25px" suit="club" />}
-          id="club"
-          dataTags={{ "data-cy": "cypress" }}
-        >
-          Test
-        </Button>
-      </ButtonSet>
+      <StepOne />
       <CardFace suit="heart" number={8} />
       <ol>
-        <li>Select a Genre / Choose for me</li>
+        <li>Select a Genre / Choose for me / Skip</li>
         <li>Generate Characters</li>
         <li>Create Character details</li>
         <li>World Building</li>

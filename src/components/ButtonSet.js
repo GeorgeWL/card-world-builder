@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./buttonSet.module.scss";
 import classNames from "classnames";
-const ButtonToggle = ({ children, onChange, direction = "row" }) => {
+const ButtonSet = ({ children, onChange, direction = "row" }) => {
   const [currentId, setCurrentId] = useState("");
   useEffect(() => {
     onChange && onChange(currentId);
@@ -18,4 +18,4 @@ const ButtonToggle = ({ children, onChange, direction = "row" }) => {
     </div>
   );
 };
-export default ButtonToggle;
+export default ButtonSet;

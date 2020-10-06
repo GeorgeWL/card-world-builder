@@ -7,16 +7,16 @@ import { ReactComponent as Club } from "../assets/noun_club_suit.svg";
 const LoadingSpinner = () => (
   <div className={classes.loader}>
     <span>
-      <Heart height="20px" width="20px" />
+      <Heart width="30px" />
     </span>
     <span>
-      <Spade height="20px" width="20px" />
+      <Spade width="30px" />
     </span>
     <span>
-      <Club height="20px" width="20px" />
+      <Club width="30px" />
     </span>
     <span>
-      <Diamond height="20px" width="20px" />
+      <Diamond width="30px" />
     </span>
   </div>
 );

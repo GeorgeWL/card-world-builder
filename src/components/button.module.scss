@@ -3,6 +3,9 @@
   outline:none;
   padding:5px 10px;
   margin: 10px;
+  min-height: 45px;
+  flex: 1 1 auto;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
