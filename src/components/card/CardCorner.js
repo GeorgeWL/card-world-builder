@@ -13,7 +13,8 @@ const NUMBER_MAP = {
   9: "10",
   10: "J",
   11: "Q",
-  12: "K"
+  12: "K",
+  13: "JOKER"
 };
 const CardCorner = ({ suit, number }) => (
   <div

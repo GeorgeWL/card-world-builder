@@ -8,7 +8,7 @@ const CardFace = ({ suit, number }) => {
     <div>
       {!royals.includes(number) ? (
         numberArray.map((number) => (
-          <div id={`${suit}-${number + 1}`}>
+          <div id={`${suit}-${number}`}>
             <CardSuit width="40px" suit={suit} />
           </div>
         ))
