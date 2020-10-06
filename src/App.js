@@ -1,13 +1,9 @@
-import React from "react";
-import Button from "./components/Button";
-import ButtonSet from "./components/ButtonSet";
+import React, { useState } from "react";
 import CardCorner from "./components/card/CardCorner";
 import CardFace from "./components/card/CardFace";
-import CardSuit from "./components/card/CardSuit";
 import LoadingSpinner from "./components/LoadingSpinner";
 import StepOne from "./components/steps/StepOne";
 import "./styles.css";
-
 export default function App() {
   return (
     <div className="App">

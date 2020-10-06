@@ -33,8 +33,18 @@ animation-delay:.1s;
       animation: anim-spin $duration infinite ease;
     }
   }
-
 }
+.completed{
+  animation: anim-shrink $duration forwards linear;
+}
+
+@keyframes anim-shrink{
+  to{
+    transform:rotate(720deg) scale(0);
+    display: none;    
+  }
+}
+
 @keyframes anim-spin{
   0% { transform: rotate(0deg); }
   50%{

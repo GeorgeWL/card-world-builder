@@ -4,8 +4,11 @@ import { ReactComponent as Heart } from "../assets/noun_heart_suit.svg";
 import { ReactComponent as Diamond } from "../assets/noun_diamond_suit.svg";
 import { ReactComponent as Spade } from "../assets/noun_spade_suit.svg";
 import { ReactComponent as Club } from "../assets/noun_club_suit.svg";
-const LoadingSpinner = () => (
-  <div className={classes.loader}>
+import classNames from "classnames";
+const LoadingSpinner = ({ finished }) => (
+  <div
+    className={classNames(classes.loader, { [classes.completed]: finished })}
+  >
     <span>
       <Heart width="30px" />
     </span>
