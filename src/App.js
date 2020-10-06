@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./components/Button";
 import ButtonSet from "./components/ButtonSet";
 import CardCorner from "./components/card/CardCorner";
+import CardFace from "./components/card/CardFace";
 import CardSuit from "./components/card/CardSuit";
 import LoadingSpinner from "./components/LoadingSpinner";
 import "./styles.css";
@@ -48,6 +49,7 @@ export default function App() {
           Test
         </Button>
       </ButtonSet>
+      <CardFace suit="heart" number={8} />
       <ol>
         <li>Select a Genre / Choose for me</li>
         <li>Generate Characters</li>

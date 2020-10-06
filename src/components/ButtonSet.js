@@ -4,7 +4,7 @@ import classNames from "classnames";
 const ButtonToggle = ({ children, onChange, direction = "row" }) => {
   const [currentId, setCurrentId] = useState("");
   useEffect(() => {
-    onChange(currentId);
+    onChange && onChange(currentId);
   }, [currentId, onChange]);
   return (
     <div className={classNames(classes.buttonSet, classes[direction])}>
