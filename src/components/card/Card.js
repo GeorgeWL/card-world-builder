@@ -1,0 +1,23 @@
+import React from "react";
+import CardCorner from "./CardCorner";
+import classes from "./card.module.scss";
+import CardFace from "./CardFace";
+import PropTypes from "prop-types";
+const Card = (cardProps) => (
+  <div className={classes.card}>
+    <div className={classes.cardTop}>
+      <CardCorner {...cardProps} />
+    </div>
+    <div className={classes.cardMain}>
+      <CardFace {...cardProps} />
+    </div>
+    <div className={classes.cardBottom}>
+      <CardCorner {...cardProps} />
+    </div>
+  </div>
+);
+export default Card;
+Card.propTypes = {
+  suit: PropTypes.oneOf(["heart", "club", "spade", "diamond"]),
+  number: PropTypes.number
+};
