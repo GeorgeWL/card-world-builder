@@ -52,7 +52,7 @@ export default () => {
             <Button
               prefix={<CardSuit width="30px" suit="spade" />}
               suffix={<CardSuit width="30px" suit="spade" />}
-              id="spade"
+              id="club"
             >
               Science Fiction
             </Button>
@@ -66,7 +66,7 @@ export default () => {
             <Button
               prefix={<CardSuit width="30px" suit="club" />}
               suffix={<CardSuit width="30px" suit="club" />}
-              id="club"
+              id="spade"
             >
               Apocalyptic/Post-apocalyptic
             </Button>
