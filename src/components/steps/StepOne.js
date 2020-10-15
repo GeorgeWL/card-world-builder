@@ -23,6 +23,7 @@ export default ({ onSubmit }) => {
         }
         if (choice === "auto") {
           setChoiceStep(1);
+          setGenreSelection(randomSuit);
         }
         if (choice === "select") {
           setChoiceStep(1);
@@ -33,7 +34,13 @@ export default ({ onSubmit }) => {
         if (choice === "back") {
           setChoiceStep(0);
         }
-        setGenreSelection(choice?.length > 0 ? choice : randomSuit);
+        const selectedChoice =
+          typeof choice === "number"
+            ? SUIT_MAP[choice]
+            : choice?.length > 0
+            ? choice
+            : randomSuit;
+        setGenreSelection(selectedChoice);
         break;
       default:
         break;
