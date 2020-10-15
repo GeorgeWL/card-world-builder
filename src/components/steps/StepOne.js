@@ -10,16 +10,23 @@ export default () => {
   function handleProgression(choice) {
     switch (choiceStep) {
       case 0:
-        if (choice === "skip") setChoiceStep(3);
-        if (choice === "auto") setChoiceStep(1);
-        if (choice === "select") setChoiceStep(1);
-
+        if (choice === "skip") {
+          setChoiceStep(3);
+        }
+        if (choice === "auto") {
+          setChoiceStep(1);
+        }
+        if (choice === "select") {
+          setChoiceStep(1);
+        }
         break;
 
       case 1:
-        setGenreSelection(choice);
-        // setChoiceStep((prevState) => (prevState += 1));
-
+        if (choice === "back") {
+          setChoiceStep(0);
+        } else {
+          setGenreSelection(choice);
+        }
         break;
 
       case 2:
@@ -70,6 +77,7 @@ export default () => {
             >
               Apocalyptic/Post-apocalyptic
             </Button>
+            <Button id="back">Back</Button>
           </ButtonSet>
         )}
       </>
