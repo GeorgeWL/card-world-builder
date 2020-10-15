@@ -4,7 +4,9 @@ import classNames from "classnames";
 const ButtonSet = ({ children, onChange, direction = "row" }) => {
   const [currentId, setCurrentId] = useState("");
   useEffect(() => {
-    onChange && onChange(currentId);
+    if (onChange) {
+      onChange(currentId);
+    }
   }, [currentId, onChange]);
   return (
     <div className={classNames(classes.buttonSet, classes[direction])}>

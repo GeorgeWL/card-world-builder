@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardCorner from "./components/card/CardCorner";
 import CardFace from "./components/card/CardFace";
 import LoadingSpinner from "./components/LoadingSpinner";
@@ -12,7 +12,7 @@ export default function App() {
       Steps
       <LoadingSpinner />
       <CardCorner number={11} suit="heart" />
-      <StepOne />
+      <StepOne onSubmit={(e) => console.log({ e })} />
       <CardFace suit="heart" number={8} />
       <ol>
         <li>Select a Genre / Choose for me / Skip</li>
@@ -24,3 +24,9 @@ export default function App() {
     </div>
   );
 }
+export const SUIT_MAP = {
+  0: { suit: "heart", genre: "Medieval/Fantasy" },
+  1: { suit: "spade", genre: "Science Fiction" },
+  2: { suit: "diamond", genre: "Modern/Cyberpunk" },
+  3: { suit: "club", genre: "Apocalyptic/Post-apocalyptic" }
+};
