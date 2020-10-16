@@ -24,11 +24,15 @@
   }
   &:hover{
     &:not(.active){
-      box-shadow: 0 4px 30px rgba(163,196,230,0.52);
+      box-shadow:0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 rgba(0, 0, 0, 0.04);
     }
   }
   &:active{
-    box-shadow:0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 30px rgba(163,196,230,0.52), inset 0 2px 0 0 rgba(0, 0, 0, 0.04);
+  }
+  &:disabled{
+    opacity: .5;
+    pointer-events: none;
   }
 }
 .primary{
@@ -37,5 +41,4 @@
 }
 .active{
   color:seagreen;
-  box-shadow: 0 4px 20px rgba(steelblue,0.62);
 }

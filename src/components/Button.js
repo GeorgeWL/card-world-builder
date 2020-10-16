@@ -10,13 +10,15 @@ const Button = ({
   dataTags,
   style = "primary",
   active,
-  type = "button"
+  type = "button",
+  disabled
 }) => (
   <button
     id={id}
     {...dataTags}
     onClick={onClick}
     type={type}
+    disabled={disabled}
     className={classNames(classes.button, classes[style], {
       [classes.active]: active
     })}

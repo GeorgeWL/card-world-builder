@@ -4,6 +4,7 @@ import { getRandomInt } from "../../helpers/numberFunctions";
 import Button from "../Button";
 import ButtonSet from "../ButtonSet";
 import CardSuit from "../card/CardSuit";
+import Flex from "../Flex";
 import Header from "../Headers";
 import Label from "../Label";
 
@@ -16,6 +17,8 @@ export default ({ onSubmit }) => {
   const randomSuit = SUIT_MAP[getRandomInt(4)];
 
   function handleProgression(choice) {
+    setGenreSelection("");
+
     switch (choiceStep) {
       case 0:
         if (choice === "skip") {
@@ -34,12 +37,7 @@ export default ({ onSubmit }) => {
         if (choice === "back") {
           setChoiceStep(0);
         }
-        const selectedChoice =
-          typeof choice === "number"
-            ? SUIT_MAP[choice]
-            : choice?.length > 0
-            ? choice
-            : randomSuit;
+        const selectedChoice = SUIT_MAP[choice];
         setGenreSelection(selectedChoice);
         break;
       default:
@@ -107,10 +105,15 @@ export default ({ onSubmit }) => {
             <Button id="skip">Skip this Step </Button>
           </ButtonSet>
         ) : (
-          <>
-            <Button type="submit">Next</Button>
+          <Flex>
+            <Button
+              disabled={!genreSelection || genreSelection.length < 1}
+              type="submit"
+            >
+              Next
+            </Button>
             <Button type="reset">Back</Button>
-          </>
+          </Flex>
         )}
       </>
     </form>
