@@ -1,6 +1,6 @@
 import React from "react";
 import StepForm from "./StepForm";
-const StepFour = ({ onSubmit }) => {
+const StepFive = ({ onSubmit }) => {
   function handleReset(evt) {}
   function handleSubmit(evt) {}
   return (
@@ -17,4 +17,4 @@ const StepFour = ({ onSubmit }) => {
     </StepForm>
   );
 };
-export default StepFour;
+export default StepFive;

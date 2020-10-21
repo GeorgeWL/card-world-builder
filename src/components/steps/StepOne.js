@@ -7,6 +7,7 @@ import CardSuit from "../card/CardSuit";
 import Flex from "../Flex";
 import Header from "../Headers";
 import Label from "../Label";
+import StepForm from "./StepForm";
 
 export default ({ onSubmit }) => {
   const [choiceStep, setChoiceStep] = useState(0);
@@ -18,7 +19,6 @@ export default ({ onSubmit }) => {
 
   function handleProgression(choice) {
     setGenreSelection("");
-
     switch (choiceStep) {
       case 0:
         if (choice === "skip") {
@@ -56,8 +56,15 @@ export default ({ onSubmit }) => {
     setGenreSelection("");
   }
   return (
-    <form onSubmit={handleSubmit} onReset={handleReset}>
-      <Header subheader="Select a Genre">Step One</Header>
+    <StepForm
+      disableSubmit={!genreSelection || genreSelection.length < 1}
+      showSubmit={choiceStep !== 0}
+      showCancel={choiceStep !== 0}
+      onSubmit={handleSubmit}
+      onReset={handleReset}
+      header="Step One"
+      subheader="Select a Genre"
+    >
       <>
         {isSelect ? (
           <ButtonSet onChange={(card) => handleProgression(card)}>
@@ -98,24 +105,14 @@ export default ({ onSubmit }) => {
             </div>
           )
         )}
-        {choiceStep === 0 ? (
+        {choiceStep === 0 && (
           <ButtonSet onChange={(choice) => handleProgression(choice)}>
             <Button id="select">Select a Genre</Button>
             <Button id="auto">Choose For Me</Button>
             <Button id="skip">Skip this Step </Button>
           </ButtonSet>
-        ) : (
-          <Flex>
-            <Button
-              disabled={!genreSelection || genreSelection.length < 1}
-              type="submit"
-            >
-              Next
-            </Button>
-            <Button type="reset">Back</Button>
-          </Flex>
         )}
       </>
-    </form>
+    </StepForm>
   );
 };

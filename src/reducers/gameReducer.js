@@ -1,10 +1,17 @@
-export const ACTION_PROGRESSION = "PROGRESS";
+export const ACTION_SUBMIT_GENRE = "SUBMIT_GENRE";
+export const INITIAL_STATE = {
+  currentStep: 0,
+  genre: ""
+};
 const gameReducer = (state, action) => {
   switch (action.type) {
-    case ACTION_PROGRESSION:
-      return { ...state };
+    case ACTION_SUBMIT_GENRE:
+      return {
+        ...state,
+        currentStep: 1,
+        genre: action.value.genre
+      };
     default:
-      console.log({ state, action });
       return { ...state };
   }
 };
