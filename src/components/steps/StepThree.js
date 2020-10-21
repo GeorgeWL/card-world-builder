@@ -10,8 +10,8 @@ const StepThree = ({ onSubmit }) => {
       // showCancel={choiceStep !== 0}
       onSubmit={handleSubmit}
       onReset={handleReset}
-      header="Step Four"
-      subheader="World Building"
+      header="Step Three"
+      subheader="Create Character Details"
     >
       Placeholder
     </StepForm>
