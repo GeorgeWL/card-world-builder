@@ -8,7 +8,7 @@ import StepTwo from "./StepTwo";
 const INITIAL_STATE = {
   currentStep: 0
 };
-const TEST_ERROR = new Error("This is a Test").stack;
+const TEST_ERROR = new Error("This is a Test")?.stack ?? "";
 const StepManager = () => {
   const [gameData, dispatch] = useReducer(gameReducer, INITIAL_STATE);
   function handleStepSubmit(value) {
