@@ -1,0 +1,28 @@
+.container{
+  border:none;
+  outline:none;
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+  min-width:50vw;
+  max-height: 50vh;  overflow-y: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  flex-direction: column;
+  transition: box-shadow .4s ease, color .4s linear;
+  box-shadow: 0 4px 30px rgba(230, 173, 163, 0.52), inset 0 2px 0 0 rgba(255, 0, 0, 0.04);
+}
+.details{
+ height:100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+}
+dl{
+  max-width:45vw;
+}

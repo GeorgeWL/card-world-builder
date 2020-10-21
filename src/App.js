@@ -1,5 +1,5 @@
 import React from "react";
-import StepOne from "./components/steps/StepOne";
+import StepManager from "./components/steps/StepManager";
 import "./styles.css";
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <li>World Building</li>
         <li>Connections</li>
       </ol>
-      <StepOne onSubmit={(e) => console.log({ e })} />
+      <StepManager />
     </div>
   );
 }
