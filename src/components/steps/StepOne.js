@@ -4,8 +4,6 @@ import { getRandomInt } from "../../helpers/numberFunctions";
 import Button from "../Button";
 import ButtonSet from "../ButtonSet";
 import CardSuit from "../card/CardSuit";
-import Flex from "../Flex";
-import Header from "../Headers";
 import Label from "../Label";
 import StepForm from "./StepForm";
 
@@ -64,55 +62,61 @@ export default ({ onSubmit }) => {
       onReset={handleReset}
       header="Step One"
       subheader="Select a Genre"
+      instructions={
+        <>
+          If you don’t have a genre of story or type of world in mind you may
+          generate one by dealing a random card from the deck face-up in front
+          of you. You may also select one of the genres, or skip this step
+          entirely and let the characters determine the genre as you play.
+        </>
+      }
     >
-      <>
-        {isSelect ? (
-          <ButtonSet onChange={(card) => handleProgression(card)}>
-            <Button
-              prefix={<CardSuit width="30px" suit="heart" />}
-              suffix={<CardSuit width="30px" suit="heart" />}
-              id={0}
-            >
-              {SUIT_MAP[0].genre}
-            </Button>
-            <Button
-              prefix={<CardSuit width="30px" suit="spade" />}
-              suffix={<CardSuit width="30px" suit="spade" />}
-              id={1}
-            >
-              {SUIT_MAP[1].genre}
-            </Button>
-            <Button
-              prefix={<CardSuit width="30px" suit="diamond" />}
-              suffix={<CardSuit width="30px" suit="diamond" />}
-              id={2}
-            >
-              {SUIT_MAP[2].genre}
-            </Button>
-            <Button
-              prefix={<CardSuit width="30px" suit="club" />}
-              suffix={<CardSuit width="30px" suit="club" />}
-              id={3}
-            >
-              {SUIT_MAP[3].genre}
-            </Button>
-          </ButtonSet>
-        ) : (
-          isAuto && (
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <CardSuit suit={randomSuit.suit} width="50px" />
-              <Label>{randomSuit.genre}</Label>
-            </div>
-          )
-        )}
-        {choiceStep === 0 && (
-          <ButtonSet onChange={(choice) => handleProgression(choice)}>
-            <Button id="select">Select a Genre</Button>
-            <Button id="auto">Choose For Me</Button>
-            <Button id="skip">Skip this Step </Button>
-          </ButtonSet>
-        )}
-      </>
+      {isSelect ? (
+        <ButtonSet onChange={(card) => handleProgression(card)}>
+          <Button
+            prefix={<CardSuit width="30px" suit="heart" />}
+            suffix={<CardSuit width="30px" suit="heart" />}
+            id={0}
+          >
+            {SUIT_MAP[0].genre}
+          </Button>
+          <Button
+            prefix={<CardSuit width="30px" suit="spade" />}
+            suffix={<CardSuit width="30px" suit="spade" />}
+            id={1}
+          >
+            {SUIT_MAP[1].genre}
+          </Button>
+          <Button
+            prefix={<CardSuit width="30px" suit="diamond" />}
+            suffix={<CardSuit width="30px" suit="diamond" />}
+            id={2}
+          >
+            {SUIT_MAP[2].genre}
+          </Button>
+          <Button
+            prefix={<CardSuit width="30px" suit="club" />}
+            suffix={<CardSuit width="30px" suit="club" />}
+            id={3}
+          >
+            {SUIT_MAP[3].genre}
+          </Button>
+        </ButtonSet>
+      ) : (
+        isAuto && (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <CardSuit suit={randomSuit.suit} width="50px" />
+            <Label>{randomSuit.genre}</Label>
+          </div>
+        )
+      )}
+      {choiceStep === 0 && (
+        <ButtonSet onChange={(choice) => handleProgression(choice)}>
+          <Button id="select">Select a Genre</Button>
+          <Button id="auto">Choose For Me</Button>
+          <Button id="skip">Skip this Step </Button>
+        </ButtonSet>
+      )}
     </StepForm>
   );
 };
