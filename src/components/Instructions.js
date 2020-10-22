@@ -1,9 +1,14 @@
 import React from "react";
+import classes from "./styles/instructions.module.scss";
 const Instructions = ({ header = "Instructions", children, example }) => (
-  <details>
-    <summary>{header}</summary>
-    <div>{children}</div>
-    {example && <em>{example}</em>}
+  <details className={classes.container}>
+    <summary className={classes.header}>{header}</summary>
+    <div className={classes.main}>{children}</div>
+    {example && (
+      <div>
+        <strong>Example:</strong> <em className={classes.quote}>{example}</em>
+      </div>
+    )}
   </details>
 );
 export default Instructions;

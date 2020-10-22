@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./loader.module.scss";
+import classes from "./styles/loader.module.scss";
 import { ReactComponent as Heart } from "../assets/noun_heart_suit.svg";
 import { ReactComponent as Diamond } from "../assets/noun_diamond_suit.svg";
 import { ReactComponent as Spade } from "../assets/noun_spade_suit.svg";

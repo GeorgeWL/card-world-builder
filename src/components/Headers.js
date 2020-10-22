@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./headers.module.scss";
+import classes from "./styles/headers.module.scss";
 export const HeaderOne = ({ children, subheader, style = "primary" }) => (
   <h1 className={classes[style]}>
     {children}

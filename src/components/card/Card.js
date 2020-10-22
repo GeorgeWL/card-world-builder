@@ -1,6 +1,6 @@
 import React from "react";
 import CardCorner from "./CardCorner";
-import classes from "./card.module.scss";
+import classes from "./styles/card.module.scss";
 import CardFace from "./CardFace";
 import PropTypes from "prop-types";
 const Card = (cardProps) => (
@@ -18,6 +18,6 @@ const Card = (cardProps) => (
 );
 export default Card;
 Card.propTypes = {
-  suit: PropTypes.oneOf(["heart", "club", "spade", "diamond"]),
-  number: PropTypes.number
+  suit: PropTypes.oneOf(["heart", "club", "spade", "diamond"]).isRequired,
+  number: PropTypes.number.isRequired
 };
