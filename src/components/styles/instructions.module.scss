@@ -1,10 +1,21 @@
 .container{
-  background: hotpink;
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom:  20px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em .4em;
+  background: lightsteelblue;
+  &[open]{   
+     padding: .5em;
+     summary{
+      border-bottom: 1px solid #aaa;
+      margin-bottom: .5em;
+     }
+  }
 }
 /*
-  .header{
-
-  }
   .main{
     
   }

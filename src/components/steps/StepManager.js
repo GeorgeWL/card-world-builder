@@ -9,7 +9,6 @@ import StepOne from "./StepOne";
 import StepThree from "./StepThree";
 import StepTwo from "./StepTwo";
 
-const TEST_ERROR = new Error("This is a Test")?.stack ?? "";
 const StepManager = () => {
   const [gameData, dispatch] = useReducer(gameReducer, INITIAL_STATE);
   function handleStepSubmit(value) {
@@ -34,7 +33,6 @@ const StepManager = () => {
         <ErrorMessage
           title="Unexpected Step"
           message="something is wrong in the application"
-          details={TEST_ERROR}
         />
       );
   }

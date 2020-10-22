@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { SUIT_MAP } from "../../App";
 import { getRandomInt } from "../../helpers/numberFunctions";
-import Button from "../Button";
-import ButtonSet from "../ButtonSet";
+import Button from "../buttons/Button";
+import ButtonSet from "../buttons/ButtonSet";
 import CardSuit from "../card/CardSuit";
 import Label from "../Label";
 import StepForm from "./StepForm";
@@ -65,9 +65,9 @@ export default ({ onSubmit }) => {
       instructions={
         <>
           If you don’t have a genre of story or type of world in mind you may
-          generate one by dealing a random card from the deck face-up in front
-          of you. You may also select one of the genres, or skip this step
-          entirely and let the characters determine the genre as you play.
+          generate one by pressing <strong>Choose for Me</strong>.<br /> You may
+          also select one of the genres, or skip this step entirely and let the
+          characters determine the genre as you play.
         </>
       }
     >
