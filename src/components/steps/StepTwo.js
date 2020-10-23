@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import generateCard from "../../helpers/generateCard";
 import Button from "../buttons/Button";
 import CardCorner from "../card/CardCorner";
+import NumberInput from "../inputs/NumberInput";
+import Label from "../Label";
 import StepForm from "./StepForm";
 const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
@@ -11,6 +14,14 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
   function handleReset(evt) {
     if ("") {
     }
+  }
+  function handleCharacterNumber(evt) {
+    const { value } = evt.target;
+    setCharactersCount(value);
+  }
+  function handleGenerateCards() {
+    const cards = Array(charactersToGenerate).map((_, index) => generateCard());
+    setCharacters(cards);
   }
 
   return (
@@ -49,13 +60,34 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         <>
           Alice wants a story that will have some focused conflict so she
           decides to have 3 characters. She deals 3 cards on the table in front
-          of her: <CardCorner align="row" number={3} suit="spade" /> ,{" "}
-          <CardCorner align="row" number={7} suit="diamond" /> , and
+          of her: <CardCorner align="row" number={3} suit="spade" />{" "}
+          <CardCorner align="row" number={7} suit="diamond" /> and
           <CardCorner align="row" number={10} suit="heart" />
         </>
       }
     >
-      <Button>Generate {charactersToGenerate} characters</Button>
+      <Label id="characterCount">Set Charcter Count</Label>
+      <NumberInput
+        min={1}
+        max={10}
+        value={charactersToGenerate}
+        onChange={handleCharacterNumber}
+        id="characterCount"
+      />
+      <Button disabled={charactersToGenerate < 1} onClick={handleGenerateCards}>
+        Generate {charactersToGenerate} characters
+      </Button>
+      <Label>Cards</Label>
+      <div>
+        {characters.map((card, index) => (
+          <CardCorner
+            key={index}
+            suit={card.suit}
+            number={card.number}
+            align="row"
+          />
+        ))}
+      </div>
     </StepForm>
   );
 };

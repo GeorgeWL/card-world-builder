@@ -16,11 +16,13 @@ const NUMBER_MAP = {
   12: "K",
   13: "JOKER"
 };
-const CardCorner = ({ suit, number }) => (
+const CardCorner = ({ suit, number, align = "column" }) => (
   <div
     style={{
       display: "flex",
-      flexDirection: "column",
+      flexDirection: align,
+      justifyContent: "center",
+      alignItems: "center",
       fontWeight: "600",
       textTransform: "uppercase"
     }}
