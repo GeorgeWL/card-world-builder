@@ -9,10 +9,11 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  max-width: 95vw;
 }
 summary,
 button,
-label[for="*"] {
+label[for] {
   cursor: pointer;
 }
 .baseInput {

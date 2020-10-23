@@ -36,7 +36,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
 
   return (
     <StepForm
-      disableSubmit={charactersToGenerate < 1 && characters.length < 1}
+      disableSubmit={charactersToGenerate < 1 || characters.length < 1}
       showSubmit={true}
       showCancel={true}
       onSubmit={handleSubmit}
