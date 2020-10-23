@@ -18,8 +18,16 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
     }
   }
   function handleCharacterNumber(evt) {
-    const { value } = evt.target;
+    const {
+      target: { value }
+    } = evt;
     setCharactersCount(value);
+  }
+  function handleKeyPress(evt) {
+    const { key } = evt;
+    if (key.toLowerCase() === "enter") {
+      handleGenerateCards();
+    }
   }
   function handleGenerateCards() {
     const cards = generateCards(charactersToGenerate);
@@ -79,22 +87,25 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         max={10}
         value={charactersToGenerate}
         onChange={handleCharacterNumber}
+        onKeyPress={handleKeyPress}
         id="characterCount"
       />
       <Button disabled={charactersToGenerate < 1} onClick={handleGenerateCards}>
         Generate {charactersToGenerate} characters
       </Button>
       <Label>Cards</Label>
-      <div>
+      <Flex>
         {characters.map((card, index) => (
-          <CardCorner
-            key={index}
-            suit={card.suit}
-            number={card.number}
-            align="row"
-          />
+          <span className="card" key={index}>
+            <CardCorner
+              key={index}
+              suit={card.suit}
+              number={card.number}
+              align="row"
+            />
+          </span>
         ))}
-      </div>
+      </Flex>
     </StepForm>
   );
 };

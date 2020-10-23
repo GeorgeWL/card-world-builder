@@ -1,6 +1,6 @@
 import React from "react";
 import BaseInput from "./BaseInput";
-const NumberInput = ({ value, onChange, min, max, id }) => (
+const NumberInput = ({ value, onChange, min, max, id, ...rest }) => (
   <BaseInput
     value={value}
     onChange={onChange}
@@ -8,6 +8,7 @@ const NumberInput = ({ value, onChange, min, max, id }) => (
     max={max}
     type="number"
     id={id}
+    {...rest}
   />
 );
 export default NumberInput;

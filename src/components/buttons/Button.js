@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import classes from "../styles/button.module.scss";
+import classes from "../../styles/button.module.scss";
 const Button = ({
   prefix,
   suffix,
