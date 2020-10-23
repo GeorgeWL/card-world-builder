@@ -60,9 +60,18 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         <>
           Alice wants a story that will have some focused conflict so she
           decides to have 3 characters. She deals 3 cards on the table in front
-          of her: <CardCorner align="row" number={3} suit="spade" />{" "}
-          <CardCorner align="row" number={7} suit="diamond" /> and
-          <CardCorner align="row" number={10} suit="heart" />
+          of her:
+          <ul>
+            <li>
+              <CardCorner align="row" number={3} suit="spade" />
+            </li>
+            <li>
+              <CardCorner align="row" number={7} suit="diamond" />
+            </li>
+            <li>
+              <CardCorner align="row" number={10} suit="heart" />
+            </li>
+          </ul>
         </>
       }
     >
