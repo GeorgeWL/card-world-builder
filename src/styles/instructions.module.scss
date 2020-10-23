@@ -3,12 +3,16 @@
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom:  20px;
-  border: 1px solid #aaa;
+  border: none;
   border-radius: 4px;
   padding: .5em .5em .4em;
-  background: lightsteelblue;
+  background: lightsteelblue;    
+  box-shadow:0 8px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 rgba(0, 0, 0, 0.04);
+  &:hover{
+    box-shadow: 0 20px 20px rgba(163,196,230,0.4)
+  }
   &[open]{   
-     padding: .5em;
+     padding: .5em;  box-shadow: 0 20px 20px rgba(163,196,230,0.4);
      summary{
       border-bottom: 1px solid #aaa;
       margin-bottom: .5em;

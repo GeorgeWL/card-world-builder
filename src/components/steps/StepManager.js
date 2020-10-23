@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import gameReducer, {
+  ACTION_STEP_BACK,
   ACTION_SUBMIT_GENRE,
   INITIAL_STATE
 } from "../../reducers/gameReducer";
@@ -14,6 +15,9 @@ const StepManager = () => {
   function handleStepSubmit(value) {
     console.log({ value }, "placeholder");
   }
+  function handleStepBack() {
+    dispatch({ type: ACTION_STEP_BACK });
+  }
   switch (gameData.currentStep) {
     case 0:
       return (
@@ -22,7 +26,9 @@ const StepManager = () => {
         />
       );
     case 1:
-      return <StepTwo onSubmit={handleStepSubmit} />;
+      return (
+        <StepTwo onSubmit={handleStepSubmit} onStepBack={handleStepBack} />
+      );
     case 2:
       return <StepThree onSubmit={handleStepSubmit} />;
     case 3:

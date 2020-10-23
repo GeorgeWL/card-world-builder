@@ -13,9 +13,8 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
   function handleSubmit(evt) {
     onSubmit(evt.currentTarget);
   }
-  function handleReset(evt) {
-    if ("") {
-    }
+  function handleReset() {
+    onStepBack();
   }
   function handleCharacterNumber(evt) {
     const {
@@ -81,13 +80,14 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         </>
       }
     >
-      <Label id="characterCount">Set Charcter Count</Label>
+      <Label id="characterCount">Set Character Count</Label>
       <NumberInput
         min={1}
         max={10}
         value={charactersToGenerate}
         onChange={handleCharacterNumber}
         onKeyPress={handleKeyPress}
+        style={{ maxWidth: "50vw" }}
         id="characterCount"
       />
       <Button disabled={charactersToGenerate < 1} onClick={handleGenerateCards}>
