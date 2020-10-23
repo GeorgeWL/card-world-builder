@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import generateCard from "../../helpers/generateCard";
+import { generateCards } from "../../helpers/generateCard";
 import Button from "../buttons/Button";
 import CardCorner from "../card/CardCorner";
+import Flex from "../Flex";
 import NumberInput from "../inputs/NumberInput";
 import Label from "../Label";
 import StepForm from "./StepForm";
-import Flex from "../Flex";
+const EXAMPLE_CARDS = generateCards(3);
 const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
-  const [charactersToGenerate, setCharactersCount] = useState(0);
+  const [charactersToGenerate, setCharactersCount] = useState(1);
   function handleSubmit(evt) {
     onSubmit(evt.currentTarget);
   }
@@ -21,7 +22,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
     setCharactersCount(value);
   }
   function handleGenerateCards() {
-    const cards = Array(charactersToGenerate).map((_, index) => generateCard());
+    const cards = generateCards(charactersToGenerate);
     setCharacters(cards);
   }
 
@@ -63,27 +64,11 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
           decides to have 3 characters. She deals 3 cards on the table in front
           of her:
           <Flex>
-            <span className="card">
-              <CardCorner
-                align="row"
-                number={generateCard().number}
-                suit={generateCard().suit}
-              />
-            </span>
-            <span className="card">
-              <CardCorner
-                align="row"
-                number={generateCard().number}
-                suit={generateCard().suit}
-              />
-            </span>
-            <span className="card">
-              <CardCorner
-                align="row"
-                number={generateCard().number}
-                suit={generateCard().suit}
-              />
-            </span>
+            {EXAMPLE_CARDS.map((card, index) => (
+              <span className="card" key={index}>
+                <CardCorner align="row" number={card.number} suit={card.suit} />
+              </span>
+            ))}
           </Flex>
         </>
       }
