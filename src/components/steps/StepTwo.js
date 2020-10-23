@@ -5,6 +5,7 @@ import CardCorner from "../card/CardCorner";
 import NumberInput from "../inputs/NumberInput";
 import Label from "../Label";
 import StepForm from "./StepForm";
+import Flex from "../Flex";
 const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
   const [charactersToGenerate, setCharactersCount] = useState(0);
@@ -61,17 +62,29 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
           Alice wants a story that will have some focused conflict so she
           decides to have 3 characters. She deals 3 cards on the table in front
           of her:
-          <ul>
-            <li>
-              <CardCorner align="row" number={3} suit="spade" />
-            </li>
-            <li>
-              <CardCorner align="row" number={7} suit="diamond" />
-            </li>
-            <li>
-              <CardCorner align="row" number={10} suit="heart" />
-            </li>
-          </ul>
+          <Flex>
+            <span className="card">
+              <CardCorner
+                align="row"
+                number={generateCard().number}
+                suit={generateCard().suit}
+              />
+            </span>
+            <span className="card">
+              <CardCorner
+                align="row"
+                number={generateCard().number}
+                suit={generateCard().suit}
+              />{" "}
+            </span>
+            <span className="card">
+              <CardCorner
+                align="row"
+                number={generateCard().number}
+                suit={generateCard().suit}
+              />
+            </span>
+          </Flex>
         </>
       }
     >

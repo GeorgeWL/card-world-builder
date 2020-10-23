@@ -25,7 +25,7 @@ const CardCorner = ({ suit, number, align = "column" }) => (
       alignItems: "center",
       fontWeight: "600",
       textTransform: "uppercase",
-      maxWidth: "65px"
+      maxWidth: "40px"
     }}
   >
     <span>{NUMBER_MAP[number]}</span>

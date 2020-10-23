@@ -21,3 +21,11 @@ label[for="*"] {
   margin: 5px;
   font-size: 1em;
 }
+.card {
+  display: block;
+  background: white;
+  box-shadow: 0 6px 20px rgba(163, 196, 230, 0.4);
+  margin: 5px;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
