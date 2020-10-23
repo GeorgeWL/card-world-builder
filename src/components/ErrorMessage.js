@@ -1,4 +1,4 @@
-import classes from "./styles/errorMessage.module.scss";
+import classes from "../styles/errorMessage.module.scss";
 import React from "react";
 const ErrorMessage = ({
   title = "there's been an error",

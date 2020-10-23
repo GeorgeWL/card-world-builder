@@ -47,8 +47,7 @@ export default function App() {
           Adaptation by{" "}
           <a href="https://georgewl.dev" target="_blank" rel="noreferrer">
             George Langham
-          </a>{" "}
-          <small>(GeorgeWL)</small>.
+          </a>
         </p>
         <p>
           Please Support the original creator by purchasing the game, or
