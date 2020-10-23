@@ -75,7 +75,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
                 align="row"
                 number={generateCard().number}
                 suit={generateCard().suit}
-              />{" "}
+              />
             </span>
             <span className="card">
               <CardCorner
