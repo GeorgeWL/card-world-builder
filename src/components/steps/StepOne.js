@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SUIT_MAP } from "../../helpers/generateCard";
+import { SUIT_MAP } from "../../data/suitMap";
 import { getRandomInt } from "../../helpers/numberFunctions";
 import Button from "../buttons/Button";
 import ButtonSet from "../buttons/ButtonSet";

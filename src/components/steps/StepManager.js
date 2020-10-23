@@ -14,7 +14,6 @@ const StepManager = () => {
   function handleStepSubmit(value) {
     console.log({ value }, "placeholder");
   }
-  console.log(gameData);
   switch (gameData.currentStep) {
     case 0:
       return (
