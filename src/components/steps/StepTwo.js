@@ -11,7 +11,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
   const [charactersToGenerate, setCharactersCount] = useState(1);
   function handleSubmit(evt) {
-    onSubmit(evt.currentTarget);
+    onSubmit(characters);
   }
   function handleReset() {
     onStepBack();
@@ -24,6 +24,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
   }
   function handleKeyPress(evt) {
     const { key } = evt;
+    evt.preventDefault();
     if (key.toLowerCase() === "enter") {
       handleGenerateCards();
     }

@@ -1,10 +1,13 @@
 import React, { useReducer } from "react";
 import gameReducer, {
   ACTION_STEP_BACK,
+  ACTION_SUBMIT_CHARACTER_BASIC,
+  ACTION_SUBMIT_CHARACTER_DETAILS,
   ACTION_SUBMIT_GENRE,
   INITIAL_STATE
 } from "../../reducers/gameReducer";
 import ErrorMessage from "../ErrorMessage";
+import StepFive from "./StepFive";
 import StepFour from "./StepFour";
 import StepOne from "./StepOne";
 import StepThree from "./StepThree";
@@ -27,12 +30,37 @@ const StepManager = () => {
       );
     case 1:
       return (
-        <StepTwo onSubmit={handleStepSubmit} onStepBack={handleStepBack} />
+        <StepTwo
+          onSubmit={(value) =>
+            dispatch({ type: ACTION_SUBMIT_CHARACTER_BASIC, value })
+          }
+          onStepBack={handleStepBack}
+        />
       );
     case 2:
-      return <StepThree onSubmit={handleStepSubmit} />;
+      return (
+        <StepThree
+          onSubmit={(value) =>
+            dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
+          }
+        />
+      );
     case 3:
-      return <StepFour onSubmit={handleStepSubmit} />;
+      return (
+        <StepFour
+          onSubmit={(value) =>
+            dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
+          }
+        />
+      );
+    case 4:
+      return (
+        <StepFive
+          onSubmit={(value) =>
+            dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
+          }
+        />
+      );
     default:
       return (
         <ErrorMessage
