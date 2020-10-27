@@ -15,12 +15,11 @@ import StepTwo from "./StepTwo";
 
 const StepManager = () => {
   const [gameData, dispatch] = useReducer(gameReducer, INITIAL_STATE);
-  function handleStepSubmit(value) {
-    console.log({ value }, "placeholder");
-  }
+
   function handleStepBack() {
     dispatch({ type: ACTION_STEP_BACK });
   }
+
   switch (gameData.currentStep) {
     case 0:
       return (
@@ -40,6 +39,7 @@ const StepManager = () => {
     case 2:
       return (
         <StepThree
+          gameData={gameData}
           onSubmit={(value) =>
             dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
           }
@@ -48,6 +48,7 @@ const StepManager = () => {
     case 3:
       return (
         <StepFour
+          gameData={gameData}
           onSubmit={(value) =>
             dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
           }
@@ -56,6 +57,7 @@ const StepManager = () => {
     case 4:
       return (
         <StepFive
+          gameData={gameData}
           onSubmit={(value) =>
             dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
           }

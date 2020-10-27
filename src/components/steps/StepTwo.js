@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { generateCards } from "../../helpers/generateCard";
 import Button from "../buttons/Button";
 import CardCorner from "../card/CardCorner";
+import CardSet from "../card/CardSet";
 import Flex from "../Flex";
 import NumberInput from "../inputs/NumberInput";
 import Label from "../Label";
@@ -95,18 +96,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         Generate {charactersToGenerate} characters
       </Button>
       <Label>Cards</Label>
-      <Flex>
-        {characters.map((card, index) => (
-          <span className="card" key={index}>
-            <CardCorner
-              key={index}
-              suit={card.suit}
-              number={card.number}
-              align="row"
-            />
-          </span>
-        ))}
-      </Flex>
+      <CardSet cards={characters} />
     </StepForm>
   );
 };

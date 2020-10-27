@@ -1,7 +1,7 @@
 export const clubsSkillsUnparsed = `Ace   -   Sharpshooter  
 What   is   their   arsenal?   How   did   they   develop   this   skill?   Who,   if   anyone,   do   they   work   for?  
 2   -   Duelist  
-How   do   they    ight?   What   do   they   use?   Are   there   strict   rules   of   conduct?   What   is   their   reputation?  
+How   do   they    fight?   What   do   they   use?   Are   there   strict   rules   of   conduct?   What   is   their   reputation?  
 3   -   Artist  
 What   is   their   medium?   Can   they   make   a   living   or   is   this   a   side   gig?   Is   their   work   well   known?   Is   it   forbidden?   Is   it  contentious?  
 4   -   Labourer  
@@ -51,7 +51,7 @@ A   social   strata   or   a   lowly   place?   What   do   people   here   lack
 King   -   The   Capital  
 Is   it   huge   and   imperious?   Is   it   purely   symbolic?   Why   is   it   important?   Who   rules   there?   Where   is   it?  `;
 export const heartsRelationsUnparsed = `Ace   -   Rebellion  
-What   are   they    ighting?   How   long   has   this    ight   lasted?   Who   is   involved?   How   close   are   they   to   the   rebellion?  Who   leads   them?  
+What   are   they    fighting?   How   long   has   this    fight   lasted?   Who   is   involved?   How   close   are   they   to   the   rebellion?  Who   leads   them?  
 2   -   Criminal   syndicate  
 What   does   this   syndicate   do?   Do   they   operate   in   the   open   or   in   the   shadows?   Was   this   a   close   relationship   or   just  a   one-time   thing?   Who   leads   them?  
 3   -  I ncorporated   company  

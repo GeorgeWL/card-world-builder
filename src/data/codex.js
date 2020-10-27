@@ -19,28 +19,25 @@ const chunkedHearts = chunkArray(heartsRelationsUnparsed.split("\n"), 2);
 const chunkedDiamonds = chunkArray(diamondsHeritageUnparsed.split("\n"), 2);
 
 export const CODEX_MAP = times(13, () => ({})).map((card, index) => {
-  const { label: clubLabel, description: clubDesc } = parseLabelDescription(
+  const club = parseLabelDescription(
     chunkedClubs[index][0],
     chunkedClubs[index][1]
   );
-  const { label: spadeLabel, description: spadeDesc } = parseLabelDescription(
+  const spade = parseLabelDescription(
     chunkedSpades[index][0],
     chunkedSpades[index][1]
   );
-  const { label: heartLabel, description: heartDesc } = parseLabelDescription(
+  const heart = parseLabelDescription(
     chunkedHearts[index][0],
     chunkedHearts[index][1]
   );
-  const {
-    label: diamondLabel,
-    description: diamondDesc
-  } = parseLabelDescription(
+  const diamond = parseLabelDescription(
     chunkedDiamonds[index][0],
     chunkedDiamonds[index][1]
   );
-  card.club = { label: clubLabel, description: clubDesc };
-  card.spade = { label: spadeLabel, description: spadeDesc };
-  card.heart = { label: heartLabel, description: heartDesc };
-  card.diamonds = { label: diamondLabel, description: diamondDesc };
+  card.club = { ...club };
+  card.spade = { ...spade };
+  card.heart = { ...heart };
+  card.diamonds = { ...diamond };
   return card;
 });
