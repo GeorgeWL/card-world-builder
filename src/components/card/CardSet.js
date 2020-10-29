@@ -1,5 +1,4 @@
 import React from "react";
-import Flex from "../Flex";
 import List from "../List";
 import Card from "./Card";
 import CardCorner from "./CardCorner";
