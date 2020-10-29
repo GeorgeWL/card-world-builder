@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "../styles/instructions.module.scss";
-const Instructions = ({ header = "Instructions", children, example }) => (
+const Instructions = ({ header = "Step Instructions", children, example }) => (
   <details className={classes.container}>
     <summary className={classes.header}>{header}</summary>
     <div className={classes.main}>{children}</div>

@@ -2,6 +2,8 @@ import React from "react";
 import StepManager from "./components/steps/StepManager";
 import "./styles.css";
 import twitterLogo from "./assets/twitter_logo_blue.svg";
+import Instructions from "./components/Instructions";
+import List from "./components/List";
 export default function App() {
   return (
     <div className="App">
@@ -11,16 +13,20 @@ export default function App() {
           <br />
           <small>A single player game about building a world</small>
         </h1>
-        <h2>Steps</h2>
-        <ol>
-          <li>
-            Select a Genre / Choose for me <strong>(optional)</strong>
-          </li>
-          <li>Generate Characters</li>
-          <li>Create Character details</li>
-          <li>World Building</li>
-          <li>Connections</li>
-        </ol>
+        <Instructions header="Game Steps">
+          <List
+            type="ol"
+            items={[
+              <>
+                Select a Genre / Choose for me <strong>(optional)</strong>
+              </>,
+              "Generate Characters",
+              "Create Character details",
+              "World Building",
+              "Connections"
+            ]}
+          />
+        </Instructions>
       </header>
       <main>
         <StepManager />

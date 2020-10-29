@@ -29,3 +29,6 @@ label[for] {
   border-radius: 4px;
   padding: 5px 10px;
 }
+strong {
+  margin: 0 5px;
+}

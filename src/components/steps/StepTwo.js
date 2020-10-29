@@ -96,7 +96,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         Generate {charactersToGenerate} characters
       </Button>
       <Label>Cards</Label>
-      <CardSet cards={characters} />
+      <CardSet cards={characters} mini={true} />
     </StepForm>
   );
 };

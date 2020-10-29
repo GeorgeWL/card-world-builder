@@ -1,0 +1,15 @@
+.items{
+  display: flex;
+  justify-content: flex-start;
+  padding:.5em 2em;
+}
+.row{
+  flex-direction: row;
+}
+.column{
+  flex-direction: column;
+}
+
+.item{
+ text-align: left;
+}
