@@ -2,9 +2,6 @@ import React from "react";
 import StepManager from "./components/steps/StepManager";
 import "./styles.css";
 import twitterLogo from "./assets/twitter_logo_blue.svg";
-import { CODEX_MAP } from "./data/codex";
-console.log({ CODEX_MAP });
-
 export default function App() {
   return (
     <div className="App">
