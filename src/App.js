@@ -9,7 +9,7 @@ export default function App() {
         <h1>
           World Builder
           <br />
-          <small>A single player tabletop game about building a world</small>
+          <small>A single player game about building a world</small>
         </h1>
         <h2>Steps</h2>
         <ol>
