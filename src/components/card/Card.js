@@ -8,7 +8,7 @@ const Card = (cardProps) => (
     <div className={classes.cardTop}>
       <CardCorner {...cardProps} />
     </div>
-    <div className={classes.cardMain}>
+    <div className={classes.cardMiddle}>
       <CardFace {...cardProps} />
     </div>
     <div className={classes.cardBottom}>

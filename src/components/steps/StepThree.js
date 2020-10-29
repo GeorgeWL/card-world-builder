@@ -1,7 +1,7 @@
 import React from "react";
+import CardSet from "../card/CardSet";
 import StepForm from "./StepForm";
-const StepThree = ({ onSubmit }) => {
-  function handleReset(evt) {}
+const StepThree = ({ gameData, onSubmit, onStepBack }) => {
   function handleSubmit(evt) {}
   return (
     <StepForm
@@ -9,11 +9,11 @@ const StepThree = ({ onSubmit }) => {
       // showSubmit={choiceStep !== 0}
       // showCancel={choiceStep !== 0}
       onSubmit={handleSubmit}
-      onReset={handleReset}
+      onReset={onStepBack}
       header="Step Three"
       subheader="Create Character Details"
     >
-      Placeholder
+      <CardSet cards={gameData.characters} />
     </StepForm>
   );
 };
