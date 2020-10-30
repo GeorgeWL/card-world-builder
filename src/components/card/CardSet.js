@@ -1,8 +1,7 @@
 import React from "react";
-import { NUMBER_MAP } from "../../data/numberMap";
 import List from "../List";
-import CardCorner from "./CardCorner";
 import Card from "./Card";
+import CardCorner from "./CardCorner";
 const CardSet = ({ mini = false, cards }) => {
   const cardsMap = cards?.map((card, index) =>
     mini ? (
@@ -15,11 +14,7 @@ const CardSet = ({ mini = false, cards }) => {
         />
       </span>
     ) : (
-      <Card
-        deckType="basic"
-        card={{ rank: NUMBER_MAP[card.number], suit: card.suit[0] }}
-        height="200px"
-      />
+      <Card {...card} />
     )
   );
   return <List items={cardsMap} align="row" listStyle="none" />;
