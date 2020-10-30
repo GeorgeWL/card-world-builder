@@ -13,7 +13,7 @@ const Card = (cardProps) => (
     <div className={classes.cardTop}>
       <CardCorner {...cardProps} />
     </div>
-    <div className={classes.cardMiddle}>
+    <div className={classes.interior}>
       <CardFace {...cardProps} />
     </div>
     <div className={classes.cardBottom}>

@@ -1,32 +1,33 @@
 import React from "react";
-import { ReactComponent as Heart } from "../../assets/noun_heart_suit.svg";
-import { ReactComponent as Diamond } from "../../assets/noun_diamond_suit.svg";
-import { ReactComponent as Spade } from "../../assets/noun_spade_suit.svg";
-import { ReactComponent as Club } from "../../assets/noun_club_suit.svg";
+
 import startCase from "lodash.startcase";
-function suitToImage(suit, props) {
+import { SUIT_COLORS } from "../../data/suitMap";
+function suitToText(suit) {
   switch (suit) {
     case "heart":
-      return <Heart {...props} />;
+      return <>&hearts;</>;
     case "diamond":
-      return <Diamond {...props} />;
+      return <>&diams;</>;
     case "spade":
-      return <Spade {...props} />;
+      return <>&spades;</>;
     case "club":
-      return <Club {...props} />;
+      return <>&clubs;</>;
     default:
       console.error(`${suit} is unexpected`);
       break;
   }
 }
 
-const CardSuit = ({ suit, ...rest }) => (
-  <span>
-    {suitToImage(suit, {
-      title: startCase(suit),
-      alt: startCase(suit),
-      ...rest
-    })}
+const CardSuit = ({ suit }) => (
+  <span
+    style={{
+      margin: "5px",
+      color: SUIT_COLORS.red.includes(suit) ? "red" : "black"
+    }}
+    title={startCase(suit)}
+    alt={startCase(suit)}
+  >
+    {suitToText(suit)}
   </span>
 );
 export default CardSuit;

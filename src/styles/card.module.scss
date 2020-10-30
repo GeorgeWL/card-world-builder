@@ -1,50 +1,11 @@
 
-
-@font-face {
-  font-family: 'Card Suits';
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/32996/CardsuitsRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: Comfortaa, "Arial Narrow", Arial, 'Card Suits', sans-serif;
-  background: #eee;
-  padding: 2rem;
-}
-
-* {
-  box-sizing: border-box;
-  position: relative;
-}
-
-h3 {
-  font-size: 2rem;
-  padding-bottom: 2rem;
-  margin-top: 0;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.deck {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(2.5in, 1fr));
-  grid-gap: 1.25em;
-  align-items: center;
-  justify-items: center;
-}
-
-.bridge.deck {
-  grid-template-columns: repeat(auto-fill, minmax(2.25in, 1fr));
-}
-
 .card {
   height: 300px;
   width: 250px;
   border-radius: 0.625em;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   background: #fff;
-  display: grid;
+  display: flex;
   grid-template-columns: 0.375em 1fr 0.375em;
   user-select: none;
   transition: all 250ms ease-out;
@@ -98,7 +59,7 @@ h3 {
   transform: rotatez(180deg);
 }
 
-.card .interior {
+.interior {
   font-size: 4rem;
   margin: 0.375em;
   grid-column: 1 / span 3;
