@@ -3,8 +3,13 @@ import CardCorner from "./CardCorner";
 import classes from "../../styles/card.module.scss";
 import CardFace from "./CardFace";
 import PropTypes from "prop-types";
+import { NUMBER_MAP } from "../../data/numberMap";
 const Card = (cardProps) => (
-  <div className={classes.card}>
+  <div
+    className={classes.card}
+    data-suit={cardProps.suit}
+    data-number={NUMBER_MAP[cardProps.number]}
+  >
     <div className={classes.cardTop}>
       <CardCorner {...cardProps} />
     </div>

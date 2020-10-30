@@ -1,9 +1,10 @@
+import times from "lodash.times";
 import React from "react";
 import CardRoyal from "./CardRoyal";
 import CardSuit from "./CardSuit";
 const royals = [10, 11, 12];
 const CardFace = ({ suit, number }) => {
-  const numberArray = Array.from(Array(number)).map((_, idx) => idx);
+  const numberArray = times(number + 1, (index) => index);
   return (
     <>
       {!royals.includes(number) ? (

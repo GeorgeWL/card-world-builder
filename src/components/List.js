@@ -15,15 +15,12 @@ const List = ({ items, align = "column", type = "ul", listStyle }) => {
   );
 };
 
-const ListChildren = ({ items }) => (
-  <>
-    {items?.map((item, key) => (
-      <li key={key} className={classes.item}>
-        {item}
-      </li>
-    ))}
-  </>
-);
+const ListChildren = ({ items }) =>
+  items?.map((item, key) => (
+    <li key={key} className={classes.item}>
+      {item}
+    </li>
+  ));
 List.propTypes = {
   items: PropTypes.array,
   type: PropTypes.oneOf(["ul", "ol"])

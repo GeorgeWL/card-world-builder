@@ -1,70 +1,118 @@
+
+
+@font-face {
+  font-family: 'Card Suits';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/32996/CardsuitsRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Comfortaa, "Arial Narrow", Arial, 'Card Suits', sans-serif;
+  background: #eee;
+  padding: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+h3 {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.5in, 1fr));
+  grid-gap: 1.25em;
+  align-items: center;
+  justify-items: center;
+}
+
+.bridge.deck {
+  grid-template-columns: repeat(auto-fill, minmax(2.25in, 1fr));
+}
+
 .card {
+  height: 300px;
+  width: 250px;
+  border-radius: 0.625em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: #fff;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "top" "middle" "bottom";
+  grid-template-columns: 0.375em 1fr 0.375em;
+  user-select: none;
+  transition: all 250ms ease-out;
+  will-change: scale3d;
+  transform: translateZ(0);
+  border: 2px solid #fff;
 }
 
-.cardTop {
+.card:hover {
+  transform: scale3d(1.01, 1.01, 1);
+  z-index: 10;
+  box-shadow: 0 1px 32px rgba(0, 0, 0, .1);
+  transition: all 125ms ease-em;
+}
+
+.card:focus {
+  border-color: royalblue;
+  outline: none;
+}
+
+.card.back {
+  background-color: royalblue;
+  border: 1.25em solid #fff;
+  background-position: center center;
+  background-size: 0.5em;
+
+  /* http://www.heropatterns.com/ - Happy Intersection*/
+  background-color: #c5e3ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cg fill='%234169e1' fill-opacity='1'%3E%3Cpath fill-rule='evenodd' d='M29.42 29.41c.36-.36.58-.85.58-1.4V0h-4v26H0v4h28c.55 0 1.05-.22 1.41-.58h.01zm0 29.18c.36.36.58.86.58 1.4V88h-4V62H0v-4h28c.56 0 1.05.22 1.41.58zm29.16 0c-.36.36-.58.85-.58 1.4V88h4V62h26v-4H60c-.55 0-1.05.22-1.41.58h-.01zM62 26V0h-4v28c0 .55.22 1.05.58 1.41.37.37.86.59 1.41.59H88v-4H62zM18 36c0-1.1.9-2 2-2h10a2 2 0 1 1 0 4H20a2 2 0 0 1-2-2zm0 16c0-1.1.9-2 2-2h10a2 2 0 1 1 0 4H20a2 2 0 0 1-2-2zm16-26a2 2 0 0 1 2-2 2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-4zm16 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-4zM34 58a2 2 0 0 1 2-2 2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-4zm16 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-4zM34 78a2 2 0 0 1 2-2 2 2 0 0 1 2 2v6a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-6zm16 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v6a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-6zM34 4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v6a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4zm16 0a2 2 0 0 1 2-2 2 2 0 0 1 2 2v6a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4zm-8 82a2 2 0 1 1 4 0v2h-4v-2zm0-68a2 2 0 1 1 4 0v10a2 2 0 1 1-4 0V18zM66 4a2 2 0 1 1 4 0v8a2 2 0 1 1-4 0V4zm0 72a2 2 0 1 1 4 0v8a2 2 0 1 1-4 0v-8zm-48 0a2 2 0 1 1 4 0v8a2 2 0 1 1-4 0v-8zm0-72a2 2 0 1 1 4 0v8a2 2 0 1 1-4 0V4zm24-4h4v2a2 2 0 1 1-4 0V0zm0 60a2 2 0 1 1 4 0v10a2 2 0 1 1-4 0V60zm14-24c0-1.1.9-2 2-2h10a2 2 0 1 1 0 4H58a2 2 0 0 1-2-2zm0 16c0-1.1.9-2 2-2h10a2 2 0 1 1 0 4H58a2 2 0 0 1-2-2zm-28-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 26a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm16 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM36 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm16 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-8-8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 68a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm16-34a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm16-12a2 2 0 1 0 0 4 6 6 0 1 1 0 12 2 2 0 1 0 0 4 10 10 0 1 0 0-20zm-64 0a2 2 0 1 1 0 4 6 6 0 1 0 0 12 2 2 0 1 1 0 4 10 10 0 1 1 0-20zm56-12a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 48a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-48 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-48a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm24 32a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-4a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm36-36a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM10 44c0-1.1.9-2 2-2h8a2 2 0 1 1 0 4h-8a2 2 0 0 1-2-2zm56 0c0-1.1.9-2 2-2h8a2 2 0 1 1 0 4h-8a2 2 0 0 1-2-2zm8 24c0-1.1.9-2 2-2h8a2 2 0 1 1 0 4h-8a2 2 0 0 1-2-2zM3 68c0-1.1.9-2 2-2h8a2 2 0 1 1 0 4H5a2 2 0 0 1-2-2zm0-48c0-1.1.9-2 2-2h8a2 2 0 1 1 0 4H5a2 2 0 0 1-2-2zm71 0c0-1.1.9-2 2-2h8a2 2 0 1 1 0 4h-8a2 2 0 0 1-2-2zm6 66a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 86a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-68A6 6 0 1 1 8 2a6 6 0 0 1 0 12zm0-4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm36 36a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.card::before,
+.card::after {
+  font-size: 1.5rem;
+  white-space: pre;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  padding: 1.25em 0 0;
+  line-height: 0.25em;
+}
+
+.card::before {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.card::after {
+  grid-row: 2;
+  grid-column: 3;
+  transform: rotatez(180deg);
+}
+
+.card .interior {
+  font-size: 4rem;
+  margin: 0.375em;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  text-align: center;
+  border: 1px solid #ddd;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "." ".";
-  grid-area: grid-top;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  line-height: 1;
 }
 
-.cardMiddle {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ".";
-  grid-area: grid-middle;
+.card.back .interior {
+  border: none;
 }
 
-.cardBottom {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "." ".";
-  grid-area: grid-bottom;
-}
-
-
-@media all and (-ms-high-contrast:none) {
-  .grid-grid-container {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-  }
-
-  .cardTop {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-  }
-
-  .cardMiddle {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr;
-    -ms-grid-rows: 1fr;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-  }
-
-  .cardBottom {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr;
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-  }
-
-}
