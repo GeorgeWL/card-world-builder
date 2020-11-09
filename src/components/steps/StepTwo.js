@@ -31,7 +31,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
     }
   }
   function handleGenerateCards() {
-    const cards = generateCards(charactersToGenerate);
+    const cards = generateCards(charactersToGenerate, characters);
     setCharacters(cards);
   }
 
@@ -74,9 +74,13 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
           of her:
           <Flex>
             {EXAMPLE_CARDS.map((card, index) => (
-              <span className="card" key={index}>
-                <CardCorner align="row" number={card.number} suit={card.suit} />
-              </span>
+              <CardCorner
+                key={index}
+                align="row"
+                number={card.number}
+                suit={card.suit}
+                isCard={true}
+              />
             ))}
           </Flex>
         </>

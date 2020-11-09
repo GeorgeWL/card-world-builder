@@ -5,16 +5,15 @@ import CardCorner from "./CardCorner";
 const CardSet = ({ mini = false, cards }) => {
   const cardsMap = cards?.map((card, index) =>
     mini ? (
-      <span className="card" key={index}>
-        <CardCorner
-          key={index}
-          suit={card.suit}
-          number={card.number}
-          align="row"
-        />
-      </span>
+      <CardCorner
+        key={index}
+        suit={card.suit}
+        number={card.number}
+        align="row"
+        isCard={true}
+      />
     ) : (
-      <Card {...card} />
+      <Card {...card} key={index} />
     )
   );
   return <List items={cardsMap} align="row" listStyle="none" />;

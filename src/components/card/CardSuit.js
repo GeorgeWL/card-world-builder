@@ -18,11 +18,11 @@ function suitToText(suit) {
   }
 }
 
-const CardSuit = ({ suit }) => (
+const CardSuit = ({ suit, size, mini }) => (
   <span
     style={{
-      margin: "5px",
-      color: SUIT_COLORS.red.includes(suit) ? "red" : "black"
+      color: SUIT_COLORS.red.includes(suit) ? "red" : "black",
+      fontSize: size
     }}
     title={startCase(suit)}
     alt={startCase(suit)}

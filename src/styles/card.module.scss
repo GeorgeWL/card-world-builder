@@ -61,14 +61,11 @@
 
 .interior {
   font-size: 4rem;
-  margin: 0.375em;
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 2;
+  margin: 0.275em 0;
   text-align: center;
   border: 1px solid #ddd;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: repeat(3, 1fr);
+  width: 185px;
+  justify-content:center;
   align-items: center;
   line-height: 1;
 }
@@ -76,4 +73,33 @@
 .card.back .interior {
   border: none;
 }
+.cardBottom,.cardTop{
+  display: flex;
+  flex-direction: column;
+  width: 50px
+}
 
+.cardBottom{
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.cardCorner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  max-width: 40px;
+  margin: 5px;
+}
+.cardInline{
+  padding:  5px 15px;
+  background: white;
+  box-shadow:  0 6px 20px rgba(163,196,230,0.4);
+  border-radius:4px;
+  span{
+    margin: 0 5px;
+  }
+}

@@ -1,21 +1,17 @@
 import React from "react";
 import { NUMBER_MAP } from "../../data/numberMap";
 import CardSuit from "./CardSuit";
-
-const CardCorner = ({ suit, number, align = "column" }) => (
+import classNames from "classnames";
+import classes from "../../styles/card.module.scss";
+const CardCorner = ({ suit, number, align = "column", isCard = false }) => (
   <div
     style={{
-      display: "flex",
-      flexDirection: align,
-      justifyContent: "center",
-      alignItems: "center",
-      fontWeight: "600",
-      textTransform: "uppercase",
-      maxWidth: "40px"
+      flexDirection: align
     }}
+    className={classNames(classes.cardCorner, { [classes.cardInline]: isCard })}
   >
-    <span>{NUMBER_MAP[number]}</span>
-    <CardSuit suit={suit} height="35px" />
+    {number && <span>{NUMBER_MAP[number]}</span>}
+    <CardSuit suit={suit} size="35px" />
   </div>
 );
 export default CardCorner;
