@@ -44,7 +44,6 @@ export const CODEX_MAP = times(13, () => ({})).map((card, index) => {
   spade.face = NUMBER_MAP[index];
   heart.face = NUMBER_MAP[index];
   diamond.face = NUMBER_MAP[index];
-
   const newCards = [club, spade, heart, diamond];
   return newCards;
 });
