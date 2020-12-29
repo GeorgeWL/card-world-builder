@@ -1,6 +1,7 @@
 import times from "lodash.times";
 import { CODEX_DECK } from "../data/codex";
 import { drawCardFromDeck, drawCardsFromDeck } from "./drawCards";
+const sortedCodex = CODEX_DECK.sort((a, b) => a.index - b.index)
 
 describe("draw card", () => {
   it("draws a random card from the deck", () => {
@@ -56,16 +57,19 @@ describe("draw multiple cards", () => {
     }
   );
   it('when draw the whole deck, should match original global constant', () => {
-    const deck = drawCardsFromDeck(52);
+    const deck = drawCardsFromDeck(52).sort((a, b) => a.index - b.index);
+    const indexOnlyDeck = deck.map(card => card.index).sort()
+    const indexOnlyCodex = CODEX_DECK.map(codexCard => codexCard.index).sort()
     expect(deck.length).toEqual(CODEX_DECK.length)
     expect(deck.length).toEqual(52)
     expect(CODEX_DECK.length).toEqual(52)
-    // why you not?
-    // expect(deck).toEqual(CODEX_DECK);
+    expect(indexOnlyDeck).toEqual(indexOnlyCodex);
+    expect(deck).toEqual(sortedCodex);
   })
   it(
     "when told to draw more cards than exist (e.g. 55), only draws 52", () => {
-      const deck = drawCardsFromDeck(55);
+      const deck = drawCardsFromDeck(55).sort((a, b) => a.index - b.index);
       expect(deck.length).toEqual(52);
+      expect(deck).toEqual(sortedCodex);
     });
 });
