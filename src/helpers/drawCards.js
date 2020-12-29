@@ -11,5 +11,6 @@ export function drawCardFromDeck(excludeCards = []) {
   return newDeck[cardNumber];
 }
 export function drawCardsFromDeck(count, excludeCards = []) {
-  return times(count, drawCardFromDeck(excludeCards));
+  const cards = times(count, () => drawCardFromDeck(excludeCards));
+  return cards;
 }
