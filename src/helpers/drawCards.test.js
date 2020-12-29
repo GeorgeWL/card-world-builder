@@ -21,6 +21,10 @@ describe("draw card", () => {
     });
 });
 describe("draw multiple cards", () => {
+  it('draws no cards if ask for 0', () => {
+    const cards = drawCardsFromDeck(0)
+    expect(cards.length).toBe(0);
+  })
   it("draws the number of cards asked for if <=52", () => {
     for (let cardIdx = 1; cardIdx < 52; cardIdx++) {
       const cards = drawCardsFromDeck(cardIdx)
@@ -43,7 +47,7 @@ describe("draw multiple cards", () => {
   );
   it(
     "when provided array with cards to exclude, does not draw those cards, has no repeated cards", () => {
-      for (let index = 0; index < 52; index++) {
+      for (let index = 1; index < 52; index++) {
         const deck = drawCardsFromDeck(52, CODEX_DECK.slice(0, index));
         const uniqueOnly = new Set(deck);
         expect(deck.length).toEqual(52 - index);
