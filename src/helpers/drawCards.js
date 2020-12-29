@@ -1,6 +1,8 @@
 import times from "lodash.times";
 import { CODEX_DECK } from "../data/codex";
-import { getRandomInt } from "./numberFunctions";
+
+export const getRandomInt = (max) =>
+  Math.floor(Math.random() * Math.floor(max));
 
 // I'm thinking now - there's only 52 possible cards,
 //  would it make sense to just grab a random card from a pre-set array instead?
