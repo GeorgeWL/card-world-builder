@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { drawCardsFromDeck } from "../../helpers/generateCard";
-import { generateCards } from "../../helpers/generateCard";
+import { drawCardsFromDeck } from "../../helpers/drawCards";
 import Button from "../buttons/Button";
 import CardCorner from "../card/CardCorner";
 import CardSet from "../card/CardSet";
@@ -9,6 +8,7 @@ import NumberInput from "../inputs/NumberInput";
 import Label from "../Label";
 import StepForm from "./StepForm";
 const EXAMPLE_CARDS = drawCardsFromDeck(3);
+
 const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
   const [charactersToGenerate, setCharactersCount] = useState(1);
@@ -32,7 +32,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
     }
   }
   function handleGenerateCards() {
-    const cards = generateCards(charactersToGenerate, characters);
+    const cards = drawCardsFromDeck(charactersToGenerate, characters);
     setCharacters(cards);
   }
 
@@ -78,7 +78,7 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
               <CardCorner
                 key={index}
                 align="row"
-                number={card.number}
+                face={card.face}
                 suit={card.suit}
                 isCard={true}
               />

@@ -1,16 +1,15 @@
-import React from "react";
-import { NUMBER_MAP } from "../../data/numberMap";
-import CardSuit from "./CardSuit";
 import classNames from "classnames";
+import React from "react";
 import classes from "../../styles/card.module.scss";
-const CardCorner = ({ suit, number, align = "column", isCard = false }) => (
+import CardSuit from "./CardSuit";
+const CardCorner = ({ suit, face, align = "column", isCard = false }) => (
   <div
     style={{
       flexDirection: align
     }}
     className={classNames(classes.cardCorner, { [classes.cardInline]: isCard })}
   >
-    {number && <span>{NUMBER_MAP[number]}</span>}
+    {face && <span>{face}</span>}
     <CardSuit suit={suit} size="35px" />
   </div>
 );

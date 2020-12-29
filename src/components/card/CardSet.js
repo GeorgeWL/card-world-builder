@@ -8,7 +8,7 @@ const CardSet = ({ mini = false, cards }) => {
       <CardCorner
         key={index}
         suit={card.suit}
-        number={card.number}
+        face={card.face}
         align="row"
         isCard={true}
       />
