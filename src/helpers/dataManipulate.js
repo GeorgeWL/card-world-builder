@@ -4,4 +4,3 @@ export const chunkArray = (array, chunkSize) => {
     return array.slice(index * chunkSize, (index + 1) * chunkSize);
   });
 };
-export const arrToObject = (arr) => Object.assign({}, arr);
