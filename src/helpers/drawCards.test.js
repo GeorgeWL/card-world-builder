@@ -59,8 +59,9 @@ describe("draw multiple cards", () => {
     // why you not?
     // expect(deck).toEqual(CODEX_DECK);
   })
-  it("when told to draw more cards than exist (e.g. 55), only draws 52", () => {
-    const deck = drawCardsFromDeck(55);
-    expect(deck.length).toEqual(52);
-  });
+  it(
+    "when told to draw more cards than exist (e.g. 55), only draws 52", () => {
+      const deck = drawCardsFromDeck(55);
+      expect(deck.length).toEqual(52);
+    });
 });
