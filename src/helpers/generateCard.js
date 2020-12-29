@@ -1,16 +1,15 @@
 import times from "lodash.times";
-import { SUIT_MAP } from "../data/suitMap";
+import { CODEX_DECK } from "../data/codex";
 import { getRandomInt } from "./numberFunctions";
 
-export function generateCard(excludeCards = [], includeJoker = false) {
-  const max = includeJoker ? 13 : 12;
-  const suitNumber = getRandomInt(4);
-  const suit = SUIT_MAP[suitNumber].suit;
-  const number = getRandomInt(max);
-  return { suit, number };
+// I'm thinking now - there's only 52 possible cards,
+//  would it make sense to just grab a random card from a pre-set array instead?
+export function drawCardFromDeck(excludeCards = []) {
+  const newDeck = CODEX_DECK.filter((card) => !excludeCards.includes(card));
+  const newLength = newDeck.length;
+  const cardNumber = getRandomInt(newLength);
+  return newDeck[cardNumber];
 }
-export const generateCards = (
-  number,
-  excludeCards = [],
-  includeJoker = false
-) => times(number, () => generateCard(includeJoker));
+export function drawCardsFromDeck(count, excludeCards = []) {
+  return times(count, drawCardFromDeck(excludeCards));
+}

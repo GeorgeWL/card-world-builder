@@ -43,6 +43,7 @@ const StepManager = () => {
           onSubmit={(value) =>
             dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
           }
+          onStepBack={handleStepBack}
         />
       );
     case 3:

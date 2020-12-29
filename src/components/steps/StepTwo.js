@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { drawCardsFromDeck } from "../../helpers/generateCard";
 import { generateCards } from "../../helpers/generateCard";
 import Button from "../buttons/Button";
 import CardCorner from "../card/CardCorner";
@@ -7,7 +8,7 @@ import Flex from "../Flex";
 import NumberInput from "../inputs/NumberInput";
 import Label from "../Label";
 import StepForm from "./StepForm";
-const EXAMPLE_CARDS = generateCards(3);
+const EXAMPLE_CARDS = drawCardsFromDeck(3);
 const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
   const [charactersToGenerate, setCharactersCount] = useState(1);
@@ -25,8 +26,8 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
   }
   function handleKeyPress(evt) {
     const { key } = evt;
-    evt.preventDefault();
     if (key.toLowerCase() === "enter") {
+      evt.preventDefault();
       handleGenerateCards();
     }
   }

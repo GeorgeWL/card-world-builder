@@ -28,7 +28,7 @@ export const diamondsHeritageUnparsed = `Ace   -   Decaying  ruin 
 What   civilization   used   to   be   here?   What   happened   to   it?   Who   else   knows   about   this   place?   Where   is   it?  
 2   -   The   Breadbasket  
 What   foods   do   they   produce?   Who   relies   on   it?   What   makes   this   place   good   at   producing   food?   Where   is   it?  
-3   -  I slands  
+3   -  Islands  
 What   separates   these   places?   Are   they   the   same?   Are   they   all   inhabited?   What   made   them?   Where   are   they?  
 4   -   Beyond   the   maps  
 Uncharted   space.   What   does   it   look   like?   Why   is   it   unrecorded?   Who   else   knows   about   this   place?   Where   is   it?  
@@ -72,7 +72,7 @@ Memories,   bodies,   or   something   different?   Are   they   revered,   fear
 Are   they   a   keeper,   poacher,   or   something   different?   Do   they   exploit   nature   or   allow   it   to    lourish?   Does   anyone  else   have   this   sort   of   relationship?   
 Jack   -   Sole   survivor  
 What   calamity   did   they   survive?   Who   died?   Is   anyone   missing?   Who   was   to   blame?   Is   someone   or   something  trying   to    inish   the   job?  
-Queen   -   Alternate  r eality  
+Queen   -   Alternate  reality  
 Where   did   they   come   from?   How   did   they   get   here?   What   is   different   in   that   world?   What   is   the   same?   Who  knows   they   aren’t   from   around   here?   How   can   they   get   back,   if   at   all?  
 King   -   Wealthy   family  
 What   sort   of   wealth   have   they   acquired?   Does   the   character   have   easy   access   to   this   wealth?   Who   owns   it?   How  do   other   people   feel   about   the   wealthy?   How   close   is   the   character   to   this   family?  `;
@@ -80,7 +80,7 @@ export const spadesTraitsUnparsed = `Ace   -   Tattoos 
 Who   applied   them?   What   do   they   represent,   if   anything?   How   do   other   people   react   to   them?   Do   they   confer   any  special   privileges?   Is   this   sort   of   thing   common   or   rare?   
 2   -   Scars  
 Where   did   they   come   from?   How   noticeable   are   they?   How   do   other   people   react   to   them?   Do   they   confer   any  special   privileges?  
-3   -   Multiple  l anguages  
+3   -   Multiple  languages  
 Are   they    luent?   How   did   they   acquire   these   languages?   Is   this   sort   of   thing   common   in   the   world?   How   do   these  languages   differ?   Are   any   of   these   languages   rare   or   uncommon?  
 4   -   Died  
 What   happened?   How   did   they   beat   death?   Does   anyone   else   know   about   this?   Has   it   happened   more   than   once?  Is   this   sort   of   thing   common   or   rare?  
