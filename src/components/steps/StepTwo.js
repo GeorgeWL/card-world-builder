@@ -7,6 +7,7 @@ import Flex from "../Flex";
 import NumberInput from "../inputs/NumberInput";
 import Label from "../Label";
 import StepForm from "./StepForm";
+
 const EXAMPLE_CARDS = drawCardsFromDeck(3);
 
 const StepTwo = ({ onSubmit, onStepBack }) => {
