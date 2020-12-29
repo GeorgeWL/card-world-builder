@@ -24,13 +24,7 @@
     max-height: 100%;
     margin: 0 5px;
   }
-  &:hover{
-      box-shadow:0 12px 15px 0 rgba(0,0,0,.1),
-      0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 rgba(0, 0, 0, 0.04);
-  }
-  &:active,&:focus{
-    box-shadow: 0 20px 20px rgba(163,196,230,0.4)
-  }
+
   &:disabled{
     opacity: .5;
     pointer-events: none;
@@ -38,8 +32,7 @@
 }
 .primary{
   background:white;
-  box-shadow: 0 6px 20px rgba(163,196,230,0.4)
 }
 .active{
-  box-shadow: 0 20px 20px rgba(163,196,230,0.4),inset 0 6px 20px rgba(0, 0, 0, 0.08)
+  background:rgba(lightsteelblue,.5)
 }

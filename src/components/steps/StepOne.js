@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SUIT_MAP } from "../../data/suitMap";
-import { getRandomInt } from "../../helpers/numberFunctions";
+import { getRandomInt } from "../../helpers/drawCards";
 import Button from "../buttons/Button";
 import ButtonSet from "../buttons/ButtonSet";
 import CardSuit from "../card/CardSuit";
@@ -104,9 +104,30 @@ export default ({ onSubmit }) => {
         </ButtonSet>
       ) : (
         isAuto && (
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <CardSuit suit={randomSuit.suit} width="50px" />
+          <div
+            className="shadow-low"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "6px",
+              padding: "0 5px",
+              background: "white",
+              minHeight: "45px"
+            }}
+          >
+            <CardSuit
+              suit={randomSuit.suit}
+              width="30px"
+              style={{ padding: "0 5px" }}
+            />
             <Label>{randomSuit.genre}</Label>
+            <CardSuit
+              suit={randomSuit.suit}
+              style={{ padding: "0 5px" }}
+              width="30px"
+            />
           </div>
         )
       )}

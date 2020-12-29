@@ -18,9 +18,11 @@ function suitToText(suit) {
   }
 }
 
-const CardSuit = ({ suit, size, mini }) => (
+const CardSuit = ({ suit, size, mini, ...rest }) => (
   <span
+    {...rest}
     style={{
+      ...rest.style,
       color: SUIT_COLORS.red.includes(suit) ? "red" : "black",
       fontSize: size
     }}

@@ -19,7 +19,7 @@ const Button = ({
     onClick={onClick}
     type={type}
     disabled={disabled}
-    className={classNames(classes.button, classes[style], {
+    className={classNames(classes.button, classes[style], "shadow-high", {
       [classes.active]: active
     })}
   >

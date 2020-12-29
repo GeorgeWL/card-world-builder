@@ -3,7 +3,6 @@
   height: 300px;
   width: 250px;
   border-radius: 0.625em;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   background: #fff;
   display: flex;
   grid-template-columns: 0.375em 1fr 0.375em;
@@ -17,7 +16,6 @@
 .card:hover {
   transform: scale3d(1.01, 1.01, 1);
   z-index: 10;
-  box-shadow: 0 1px 32px rgba(0, 0, 0, .1);
   transition: all 125ms ease-em;
 }
 
@@ -97,7 +95,6 @@
 .cardInline{
   padding:  5px 15px;
   background: white;
-  box-shadow:  0 6px 20px rgba(163,196,230,0.4);
   border-radius:4px;
   span{
     margin: 0 5px;
