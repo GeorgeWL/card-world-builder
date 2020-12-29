@@ -49,4 +49,4 @@ export const CODEX_MAP = times(13, () => ({})).map((card, index) => {
   return newCards;
 });
 
-export const CODEX_DECK = CODEX_MAP.flat();
+export const CODEX_DECK = CODEX_MAP.flat().map((card, index) => ({ ...card, index })).sort((a, b) => a.index > b.index);
