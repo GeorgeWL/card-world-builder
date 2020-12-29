@@ -1,7 +1,6 @@
-import times from "lodash.times";
 import { CODEX_DECK } from "../data/codex";
 import { drawCardFromDeck, drawCardsFromDeck } from "./drawCards";
-const sortedCodex = CODEX_DECK.sort((a, b) => a.index - b.index)
+const SORTED_CODEX = CODEX_DECK.sort((a, b) => a.index - b.index)
 
 describe("draw card", () => {
   it("draws a random card from the deck", () => {
@@ -64,12 +63,12 @@ describe("draw multiple cards", () => {
     expect(deck.length).toEqual(52)
     expect(CODEX_DECK.length).toEqual(52)
     expect(indexOnlyDeck).toEqual(indexOnlyCodex);
-    expect(deck).toEqual(sortedCodex);
+    expect(deck).toEqual(SORTED_CODEX);
   })
   it(
     "when told to draw more cards than exist (e.g. 55), only draws 52", () => {
       const deck = drawCardsFromDeck(55).sort((a, b) => a.index - b.index);
       expect(deck.length).toEqual(52);
-      expect(deck).toEqual(sortedCodex);
+      expect(deck).toEqual(SORTED_CODEX);
     });
 });
