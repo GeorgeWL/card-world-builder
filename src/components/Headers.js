@@ -1,40 +1,62 @@
 import React from "react";
-import classes from "../styles/headers.module.scss";
-export const HeaderOne = ({ children, subheader, style = "primary" }) => (
-  <h1 className={classes[style]}>
+import styles from "../styles/headers.module.scss";
+import classNames from "classnames";
+export const HeaderOne = ({
+  children,
+  subheader,
+  headerStyle = "primary",
+  ...rest
+}) => (
+  <h1 className={classNames(styles.header, styles[headerStyle])}>
     {children}
     {subheader && <small>{subheader}</small>}
   </h1>
 );
-export const HeaderTwo = ({ children, subheader, style = "primary" }) => (
-  <h1 className={classes[style]}>
+export const HeaderTwo = ({
+  children,
+  subheader,
+  headerStyle = "primary",
+  ...rest
+}) => (
+  <h2 className={classNames(styles.header, styles[headerStyle])} {...rest}>
     {children}
     {subheader && <small>{subheader}</small>}
-  </h1>
+  </h2>
 );
-export const HeaderThree = ({ children, subheader, style = "primary" }) => (
-  <h1 className={classes[style]}>
+export const HeaderThree = ({
+  children,
+  subheader,
+  headerStyle = "primary",
+  ...rest
+}) => (
+  <h3 className={classNames(styles.header, styles[headerStyle])} {...rest}>
     {children}
     {subheader && <small>{subheader}</small>}
-  </h1>
+  </h3>
 );
-const Header = ({ children, subheader, style = "primary", type = "h1" }) => {
+const Header = ({
+  children,
+  subheader,
+  headerStyle = "primary",
+  type = "h1",
+  ...rest
+}) => {
   switch (type) {
     case "h1":
       return (
-        <HeaderOne subheader={subheader} style={style}>
+        <HeaderOne subheader={subheader} headerStyle={headerStyle} {...rest}>
           {children}
         </HeaderOne>
       );
     case "h2":
       return (
-        <HeaderTwo subheader={subheader} style={style}>
+        <HeaderTwo subheader={subheader} headerStyle={headerStyle} {...rest}>
           {children}
         </HeaderTwo>
       );
     case "h3":
       return (
-        <HeaderThree subheader={subheader} style={style}>
+        <HeaderThree subheader={subheader} headerStyle={headerStyle} {...rest}>
           {children}
         </HeaderThree>
       );
