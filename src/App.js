@@ -34,12 +34,18 @@ export default function App() {
       <footer>
         <p>
           Adapted from{" "}
-          <a href="https://sohkrates.itch.io/world-maker">World Maker</a> by
-          Michael Elliot{" "}
+          <a
+            href="https://sohkrates.itch.io/world-maker"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            World Maker
+          </a>{" "}
+          by Michael Elliot{" "}
           <a
             href="http://twitter.com/kindelingboy"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             <img
               width="25px"
@@ -51,7 +57,11 @@ export default function App() {
         </p>
         <p>
           Adaptation by{" "}
-          <a href="https://georgewl.dev" target="_blank" rel="noreferrer">
+          <a
+            href="https://georgewl.dev"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             George Langham
           </a>
         </p>
@@ -61,7 +71,7 @@ export default function App() {
           <a
             href="http://www.patreon.com/notwriting"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             Patreon
           </a>

@@ -1,4 +1,4 @@
-export const NUMBER_MAP = {
+export const FACE_MAP = {
   0: "A",
   1: "2",
   2: "3",

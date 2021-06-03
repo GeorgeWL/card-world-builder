@@ -1,6 +1,6 @@
 import times from "lodash.times";
 import { chunkArray } from "../helpers/dataManipulate";
-import { NUMBER_MAP } from "./numberMap";
+import { FACE_MAP } from "./numberMap";
 import {
   clubsSkillsUnparsed,
   diamondsHeritageUnparsed,
@@ -40,12 +40,23 @@ export const CODEX_MAP = times(13, () => ({})).map((card, index) => {
   spade.suit = "spade";
   heart.suit = "heart";
   diamond.suit = "diamond";
-  club.face = NUMBER_MAP[index];
-  spade.face = NUMBER_MAP[index];
-  heart.face = NUMBER_MAP[index];
-  diamond.face = NUMBER_MAP[index];
+  club.aspect = "Skills";
+  diamond.aspect = "Heritage";
+  heart.aspect = "Relationships";
+  spade.aspect = "Traits";
+  club.face = FACE_MAP[index];
+  spade.face = FACE_MAP[index];
+  heart.face = FACE_MAP[index];
+  diamond.face = FACE_MAP[index];
+  club.value = index + 1;
+  spade.value = index + 1;
+  heart.value = index + 1;
+  diamond.value = index + 1;
   const newCards = [club, spade, heart, diamond];
   return newCards;
 });
 
-export const CODEX_DECK = CODEX_MAP.flat().map((card, index) => ({ ...card, index }));
+export const CODEX_DECK = CODEX_MAP.flat().map((card, index) => ({
+  ...card,
+  index
+}));

@@ -98,7 +98,7 @@ Is   this   cybernetics/transplants/prosthetics   or   something   else?   Is   
 What   do   they   predict?   Do   these   predictions   tend   to   come   true?   Are   their   prophecies   religious,   historic,   scienti ic,  or   natural?   Is   this   sort   of   thing   common   or   rare?   How   do   other   people   react   to   this?   Is   this   considered   an  advantage   or   a   disadvantage?  
 Jack   -   Alien  
 Where   are   they   from?   Does   anyone   else   know   about   this?   How   did   they   get   here?   Can   they   get   back,   and   do   they  want   to?   Are   their   other   traits   or   skills   affected   by   this?  
-Queen   -  I mmortal  
+Queen   -  Immortal  
 How   else   are   they   different   from   mortals?   Are   there   others   like   them?   Is   this   sort   of   thing   common   or   rare?   Does  anyone   else   know   about   this?   How   do   other   people   react   to   this?   Is   this   considered   an   advantage   or   a  disadvantage?  
 King   -   Time   Traveler  
 Where   and   when   did   you   they   from?   How   did   they   get   here?   Can   they   get   back,   and   do   they   want   to?   What   do  they   know   about   the   present,   past,   or   future   because   of   this?   Does   anyone   else   know?   Is   this   sort   of   thing   common  or   rare?   How   do   other   people   react   to   this?   Is   this   considered   an   advantage   or   a   disadvantage?  `;
