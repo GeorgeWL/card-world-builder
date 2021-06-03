@@ -29,7 +29,9 @@ const StepForm = ({
       <Flex flexDirection="column">
         <Header subheader={subheader}>{header}</Header>
         {instructions && (
-          <Instructions example={example}>{instructions}</Instructions>
+          <Instructions example={example} open>
+            {instructions}
+          </Instructions>
         )}
         {children}
         {(showSubmit || showCancel) && (

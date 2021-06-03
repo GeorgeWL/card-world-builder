@@ -15,12 +15,23 @@
   }
   
   &[open]{   
+    
     padding: .5em;
     box-shadow: 0 20px 20px rgba(163,196,230,0.4);
     summary{
       margin: .5em;
       border-bottom: 1px solid #aaa;
       margin-bottom: .5em;
+      background: lightsteelblue;
      }
+  }
+  summary{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom-style:none;
+    background: lightsteelblue;
+    margin-bottom: 5px;
   }
 }

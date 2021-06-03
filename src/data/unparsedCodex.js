@@ -81,7 +81,7 @@ Who   applied   them?   What   do   they   represent,   if   anything?   How   d
 2   -   Scars  
 Where   did   they   come   from?   How   noticeable   are   they?   How   do   other   people   react   to   them?   Do   they   confer   any  special   privileges?  
 3   -   Multiple  languages  
-Are   they    luent?   How   did   they   acquire   these   languages?   Is   this   sort   of   thing   common   in   the   world?   How   do   these  languages   differ?   Are   any   of   these   languages   rare   or   uncommon?  
+Are   they    fluent?   How   did   they   acquire   these   languages?   Is   this   sort   of   thing   common   in   the   world?   How   do   these  languages   differ?   Are   any   of   these   languages   rare   or   uncommon?  
 4   -   Died  
 What   happened?   How   did   they   beat   death?   Does   anyone   else   know   about   this?   Has   it   happened   more   than   once?  Is   this   sort   of   thing   common   or   rare?  
 5   -   Doesn’t   sleep  

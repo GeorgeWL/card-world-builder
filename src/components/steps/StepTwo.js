@@ -13,7 +13,7 @@ const EXAMPLE_CARDS = drawCardsFromDeck(3);
 const StepTwo = ({ onSubmit, onStepBack }) => {
   const [characters, setCharacters] = useState([]);
   const [charactersToGenerate, setCharactersCount] = useState(1);
-  function handleSubmit(evt) {
+  function handleSubmit() {
     onSubmit(characters);
   }
   function handleReset() {
