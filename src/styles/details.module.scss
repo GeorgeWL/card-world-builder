@@ -48,7 +48,7 @@
   }
   .listInline{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(33vw, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
     grid-column-gap: 15px;
     grid-row-gap: 10px;
     width: 100%;

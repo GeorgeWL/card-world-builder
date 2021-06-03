@@ -2,10 +2,17 @@ import classNames from "classnames";
 import React from "react";
 import classes from "../../styles/card.module.scss";
 import CardSuit from "./CardSuit";
-const CardCorner = ({ suit, face, align = "column", isCard = false }) => (
+const CardCorner = ({
+  suit,
+  face,
+  align = "column",
+  style,
+  isCard = false
+}) => (
   <div
     style={{
-      flexDirection: align
+      flexDirection: align,
+      ...style
     }}
     className={classNames(classes.cardCorner, { [classes.cardInline]: isCard })}
   >

@@ -1,9 +1,9 @@
+import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { drawCardsFromDeck } from "../../helpers/drawCards";
 import styles from "../../styles/details.module.scss";
 import CardCorner from "../card/CardCorner";
 import DetailItem from "./DetailItem";
-import classNames from "classnames";
 const DetailList = ({ character, existingCards }) => {
   const [details, setDetails] = useState([]);
 
@@ -27,15 +27,23 @@ const DetailList = ({ character, existingCards }) => {
           <CardCorner {...character} align="row" isCard />
           Character Details
         </summary>
-        <ul className={styles.list}>
-          {details?.length &&
-            details.map((detail) => (
-              <DetailItem
-                key={"detail-" + character.face + "-" + character.suit}
-                detail={detail}
-              />
-            ))}
-        </ul>
+        <table className={styles.list}>
+          <thead>
+            <tr>
+              <th colSpan={2}>Aspect</th>
+              <th>Prompt</th>
+            </tr>
+          </thead>
+          <tbody>
+            {details?.length &&
+              details.map((detail) => (
+                <DetailItem
+                  key={"detailItem-" + character.face + "-" + character.suit}
+                  detail={detail}
+                />
+              ))}
+          </tbody>
+        </table>
       </details>
     </li>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import StepForm from "./StepForm";
-const StepFour = ({ onSubmit }) => {
-  function handleReset(evt) {}
+const StepFour = ({ onSubmit, onStepBack }) => {
   function handleSubmit(evt) {}
   return (
     <StepForm
@@ -9,7 +8,7 @@ const StepFour = ({ onSubmit }) => {
       // showSubmit={choiceStep !== 0}
       // showCancel={choiceStep !== 0}
       onSubmit={handleSubmit}
-      onReset={handleReset}
+      onReset={onStepBack}
       header="Step Four"
       subheader="World Building"
     >

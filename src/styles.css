@@ -47,16 +47,6 @@ strong {
   box-shadow: 0 6px 20px rgba(163, 196, 230, 0.4);
 }
 
-input.shadow-low:hover,
-button.shadow-low:hover,
-label[for].shadow-low:hover {
-}
-
-input.shadow-mid:hover,
-button.shadow-mid:hover,
-label[for].shadow-mid:hover {
-}
-
 input.shadow-high:hover,
 button.shadow-high:hover,
 label[for].shadow-high:hover {
@@ -75,4 +65,16 @@ label[for].shadow-high:hover {
 .shadow-high:focus,
 .shadow-high:active {
   box-shadow: 0 20px 20px rgba(163, 196, 230, 0.4);
+}
+th,
+td {
+  border: 1px solid #aaaaaa;
+  border-top: none;
+  padding: 0 5px;
+}
+th:nth-child(1) {
+  border-right: none;
+}
+td:nth-child(1) {
+  border-right: none;
 }
