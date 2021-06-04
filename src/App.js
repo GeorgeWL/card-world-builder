@@ -4,15 +4,20 @@ import "./styles.css";
 import twitterLogo from "./assets/twitter_logo_blue.svg";
 import Instructions from "./components/Instructions";
 import List from "./components/List";
+import Header from "./components/Headers";
 export default function App() {
   return (
     <div className="App">
       <header>
-        <h1>
+        <Header>
           World Builder
           <br />
           <small>A single player game about building a world</small>
-        </h1>
+        </Header>
+        <Header headerLevel="h3">
+          All that you require is this website and somewhere to write notes (a
+          notebook, word document, scraps of paper)
+        </Header>
         <Instructions header="Game Steps">
           <List
             type="ol"

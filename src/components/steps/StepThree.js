@@ -1,12 +1,24 @@
-import React from "react";
+import classNames from "classnames";
+import React, { useState } from "react";
 import styles from "../../styles/details.module.scss";
 import DetailList from "../details/DetailList";
 import StepForm from "./StepForm";
-import classNames from "classnames";
-const StepThree = ({ gameData, onSubmit, onStepBack }) => {
-  function handleSubmit(evt) {
-    onSubmit(evt);
+const StepThree = ({ gameData, onSubmit, onUpdate, onStepBack }) => {
+  const [existingCards, setExistingCards] = useState(gameData.characters);
+  const [charactersLoaded, setCharacterLoaded] = useState([]);
+  function handleItemLoad(character, newCards) {
+    const currentExistingCards = [...existingCards, ...newCards];
+    setExistingCards(currentExistingCards);
+    const oldCharacters = charactersLoaded;
+    const newCharacter = { ...character, details: newCards };
+    oldCharacters.push(newCharacter);
+    setCharacterLoaded(oldCharacters);
   }
+
+  function handleSubmit() {
+    onSubmit(charactersLoaded);
+  }
+
   return (
     <StepForm
       // disableSubmit={!genreSelection || genreSelection.length < 1}
@@ -41,12 +53,13 @@ const StepThree = ({ gameData, onSubmit, onStepBack }) => {
       }
     >
       <ul className={classNames(styles.list, styles.listInline)}>
-        {gameData?.characters &&
-          gameData.characters.map((character) => (
+        {gameData?.characters.length > 0 &&
+          gameData?.characters?.map((character) => (
             <DetailList
-              key={character.face + "-" + character.suit}
+              key={"character-" + character.face + "-" + character.suit}
               character={character}
-              existingCards={gameData.characters}
+              existingCards={existingCards}
+              onLoadItem={handleItemLoad}
             />
           ))}
       </ul>

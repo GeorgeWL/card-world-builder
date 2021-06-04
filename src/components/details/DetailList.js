@@ -4,9 +4,8 @@ import { drawCardsFromDeck } from "../../helpers/drawCards";
 import styles from "../../styles/details.module.scss";
 import CardCorner from "../card/CardCorner";
 import DetailItem from "./DetailItem";
-const DetailList = ({ character, existingCards }) => {
+const DetailList = ({ character, existingCards, onLoadItem }) => {
   const [details, setDetails] = useState([]);
-
   useEffect(() => {
     function generateCharacterDetails(value) {
       return drawCardsFromDeck(value, existingCards);
@@ -18,8 +17,9 @@ const DetailList = ({ character, existingCards }) => {
     );
     if (details.length === 0) {
       setDetails(characterDetails);
+      onLoadItem(character, characterDetails);
     }
-  }, [details, character.value, existingCards]);
+  }, [details, character, existingCards, onLoadItem]);
   return (
     <li className={styles.listItem}>
       <details className={styles.details}>
@@ -38,7 +38,7 @@ const DetailList = ({ character, existingCards }) => {
             {details?.length &&
               details.map((detail) => (
                 <DetailItem
-                  key={"detailItem-" + character.face + "-" + character.suit}
+                  key={"detail-" + detail.face + "-" + detail.suit}
                   detail={detail}
                 />
               ))}

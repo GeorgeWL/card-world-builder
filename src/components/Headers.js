@@ -38,10 +38,10 @@ const Header = ({
   children,
   subheader,
   headerStyle = "primary",
-  type = "h1",
+  headerLevel = "h1",
   ...rest
 }) => {
-  switch (type) {
+  switch (headerLevel) {
     case "h1":
       return (
         <HeaderOne subheader={subheader} headerStyle={headerStyle} {...rest}>

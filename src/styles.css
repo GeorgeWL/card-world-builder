@@ -72,6 +72,9 @@ td {
   border-top: none;
   padding: 0 5px;
 }
+td {
+  height: 105px;
+}
 th:nth-child(1) {
   border-right: none;
 }

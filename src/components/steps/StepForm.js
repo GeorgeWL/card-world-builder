@@ -22,7 +22,7 @@ const StepForm = ({
   }
   function handleReset(evt) {
     evt.preventDefault();
-    onReset(evt);
+    onReset && onReset(evt);
   }
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>

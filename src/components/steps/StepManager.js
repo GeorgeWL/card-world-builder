@@ -3,6 +3,7 @@ import gameReducer, {
   ACTION_STEP_BACK,
   ACTION_SUBMIT_CHARACTER_BASIC,
   ACTION_SUBMIT_CHARACTER_DETAILS,
+  ACTION_UPDATE_CHARACTER_DETAILS,
   ACTION_SUBMIT_GENRE,
   INITIAL_STATE
 } from "../../reducers/gameReducer";
@@ -43,6 +44,9 @@ const StepManager = () => {
           onSubmit={(value) =>
             dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
           }
+          onUpdate={(value) =>
+            dispatch({ type: ACTION_UPDATE_CHARACTER_DETAILS, value })
+          }
           onStepBack={handleStepBack}
         />
       );
@@ -53,6 +57,7 @@ const StepManager = () => {
           onSubmit={(value) =>
             dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
           }
+          onStepBack={handleStepBack}
         />
       );
     case 4:
