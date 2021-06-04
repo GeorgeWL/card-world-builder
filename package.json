@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@uiw/react-md-editor": "3.3.6",
     "classnames": "2.2.6",
     "lodash.startcase": "4.4.0",
     "lodash.times": "4.3.2",

@@ -1,6 +1,6 @@
 import CardCorner from "../card/CardCorner";
 
-const DetailItem = ({ detail }) => (
+const DetailItemRow = ({ detail }) => (
   <tr>
     <td colSpan="2">
       <small>{detail.aspect}</small>
@@ -12,4 +12,4 @@ const DetailItem = ({ detail }) => (
     </td>
   </tr>
 );
-export default DetailItem;
+export default DetailItemRow;

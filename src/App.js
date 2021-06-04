@@ -26,7 +26,7 @@ export default function App() {
                 Select a Genre / Choose for me <strong>(optional)</strong>
               </>,
               "Generate Characters",
-              "Create Character details",
+              "Character details",
               "World Building",
               "Connections"
             ]}
