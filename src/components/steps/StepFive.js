@@ -39,9 +39,9 @@ const StepFive = ({ onSubmit, onStepBack, gameData }) => {
           <p>
             The Card between each character details is the relationships or
             connections between the characters. If there are more than 2
-            characters there will be an extra card to the right of the rightmost
-            character, this introduces a connection between the rightmost
-            character and the leftmost character.
+            characters there will be an extra card after the last character,
+            this introduces a connection between the rightmost character and the
+            leftmost character.
           </p>
           <p>
             The suit of the card between the characters determines the nature of
