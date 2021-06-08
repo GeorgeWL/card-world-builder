@@ -18,7 +18,20 @@ import StepTwo from "./StepTwo";
 const StepContainer = ({ children, setMarkdown, markdown }) => (
   <>
     {children}
-    <Header headerLevel="h3">Notes</Header>
+    <Header headerLevel="h3">
+      Notes{" "}
+      <small>
+        (
+        <a
+          href="https://www.markdownguide.org/basic-syntax/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          How to use Markdown
+        </a>
+        )
+      </small>
+    </Header>
     <TextAreaMarkdown setValue={setMarkdown} value={markdown} />
   </>
 );
