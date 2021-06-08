@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script:wght@700&family=Grenze+Gotisch:wght@700&family=MuseoModerno:wght@700&family=Press+Start+2P&display=swap');
+.container{
+  display: block;
+}
+.letter{
+  text-transform: uppercase;  
+  font-size: 40px;
+  &:nth-child(1n){
+    font-family: 'Amatic SC',cursive;
+  }
+ 
+  &:nth-child(2n){
+    font-family: 'Grenze Gotisch',cursive;
+  } 
+  &:nth-child(3n){
+    font-family: 'Dancing Script',cursive;
+  }
+  &:nth-child(4n){
+    font-family:'Press Start 2P',monospace;
+    font-size: 30px
+  }
+  &:nth-child(5n){
+    font-family:'MuseoModerno',cursive;
+  }
+  
+}

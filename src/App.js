@@ -5,12 +5,13 @@ import twitterLogo from "./assets/twitter_logo_blue.svg";
 import Instructions from "./components/Instructions";
 import List from "./components/List";
 import Header from "./components/Headers";
+import WeirdLetters from "./components/WeirdLetters";
 export default function App() {
   return (
     <div className="App">
       <header>
         <Header>
-          World Builder
+          <WeirdLetters text="World Builder" />
           <br />
           <small>A single player game about building a world</small>
         </Header>

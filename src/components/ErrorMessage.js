@@ -1,15 +1,15 @@
-import classes from "../styles/errorMessage.module.scss";
+import styles from "../styles/errorMessage.module.scss";
 import React from "react";
 const ErrorMessage = ({
   title = "there's been an error",
   message,
   details
 }) => (
-  <div className={classes.container}>
+  <div className={styles.container}>
     <h1>{title}</h1>
     <p>{message}</p>
     {details && (
-      <details className={classes.details}>
+      <details className={styles.details}>
         <summary>View details</summary>
         <dl>
           {details
