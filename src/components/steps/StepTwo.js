@@ -101,7 +101,6 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         {characters.length <= 0 ? "Generate" : "Replace"} {charactersToGenerate}{" "}
         characters
       </Button>
-      <Label>Cards</Label>
       <CardSet cards={characters} mini={true} />
     </StepForm>
   );
