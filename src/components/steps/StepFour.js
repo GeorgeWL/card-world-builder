@@ -1,19 +1,12 @@
 import React from "react";
 import DetailListReadOnly from "../details/DetailListReadOnly";
 import StepForm from "./StepForm";
-import { useState } from "react";
 
 const StepFour = ({ gameData, onSubmit, onStepBack }) => {
-  const [notes, setNotes] = useState("");
-  function handleSubmit() {
-    onSubmit();
-  }
   return (
     <StepForm
-      // disableSubmit={!genreSelection || genreSelection.length < 1}
-      // showSubmit={choiceStep !== 0}
       showCancel={true}
-      // onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       onReset={onStepBack}
       header="Step Four"
       subheader="World Building"
