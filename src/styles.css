@@ -9,9 +9,18 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  color: #0a0a0a;
+}
+.App {
   max-width: 95vw;
 }
-
+form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 summary,
 button,
 label[for] {
@@ -68,14 +77,20 @@ label[for].shadow-high:hover {
 .shadow-high:active {
   box-shadow: 0 20px 20px rgba(163, 196, 230, 0.4);
 }
+table {
+  margin-top: 10px;
+}
 th,
 td {
   border: 1px solid #aaaaaa;
-  border-top: none;
   padding: 0 5px;
   text-align: center;
 }
+th {
+  border-top: 1px solid #aaaaaa;
+}
 td {
+  border-top: none;
   height: 105px;
 }
 th:nth-child(1) {

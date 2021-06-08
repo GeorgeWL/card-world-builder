@@ -52,17 +52,8 @@ const StepFour = ({ gameData, onSubmit, onStepBack }) => {
       }
     >
       <p>
-        Get your Notebook and start planning! Here's your character prompts so
-        far.
-        <br /> Feel free to take notes here, and they'll get saved when you
-        submit
+        Get your Notes and start planning! Here's your character prompts so far.
       </p>
-      <textarea
-        onChange={(evt) => setNotes(evt.target.value)}
-        value={notes}
-        placeholder="Take Notes!"
-      />
-
       <DetailListReadOnly characters={gameData.characters} />
     </StepForm>
   );
