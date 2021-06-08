@@ -5,6 +5,8 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@sentry/react": "6.5.1",
+    "@sentry/tracing": "6.5.1",
     "@uiw/react-md-editor": "3.3.6",
     "classnames": "2.2.6",
     "lodash.startcase": "4.4.0",
