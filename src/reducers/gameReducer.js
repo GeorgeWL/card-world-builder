@@ -1,7 +1,7 @@
 export const ACTION_SUBMIT_GENRE = "SUBMIT_GENRE";
 export const ACTION_SUBMIT_CHARACTER_BASIC = "SUBMIT_BASIC_CHARACTERS";
 export const ACTION_SUBMIT_CHARACTER_DETAILS = "SUBMIT_DETAILED_CHARACTERS";
-export const ACTION_UPDATE_CHARACTER_DETAILS = "UPDATE_DETAILED_CHARACTERS";
+export const ACTION_UPDATE_MARKDOWN = "UPDATE_MARKDOWN";
 export const ACTION_SUBMIT_WORLD_DETAILS = "SUBMIT_WORLD_DETAILS";
 export const ACTION_SUBMIT_CONNECTIONS = "SUBMIT_CONNECTIONS";
 
@@ -10,10 +10,15 @@ export const INITIAL_STATE = {
   currentStep: 0,
   genre: "",
   characters: [],
-  tempChars: []
+  markdownNotes: ""
 };
 const gameReducer = (state, action) => {
   switch (action.type) {
+    case ACTION_UPDATE_MARKDOWN:
+      return {
+        ...state,
+        markdownNotes: action.value
+      };
     case ACTION_SUBMIT_GENRE:
       return {
         ...state,
