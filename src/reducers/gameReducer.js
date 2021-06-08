@@ -4,7 +4,7 @@ export const ACTION_SUBMIT_CHARACTER_DETAILS = "SUBMIT_DETAILED_CHARACTERS";
 export const ACTION_UPDATE_MARKDOWN = "UPDATE_MARKDOWN";
 export const ACTION_SUBMIT_WORLD_DETAILS = "SUBMIT_WORLD_DETAILS";
 export const ACTION_SUBMIT_CONNECTIONS = "SUBMIT_CONNECTIONS";
-
+export const ACTION_STEP_FORWARD = "STEP_FORWARD";
 export const ACTION_STEP_BACK = "STEP_BACK";
 export const INITIAL_STATE = {
   currentStep: 0,
@@ -29,6 +29,11 @@ const gameReducer = (state, action) => {
       return {
         ...state,
         currentStep: state.currentStep - 1
+      };
+    case ACTION_STEP_FORWARD:
+      return {
+        ...state,
+        currentStep: state.currentStep + 1
       };
     case ACTION_SUBMIT_CHARACTER_BASIC:
       return {

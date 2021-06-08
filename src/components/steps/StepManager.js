@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import gameReducer, {
   ACTION_STEP_BACK,
+  ACTION_STEP_FORWARD,
   ACTION_SUBMIT_CHARACTER_BASIC,
   ACTION_SUBMIT_CHARACTER_DETAILS,
   ACTION_UPDATE_MARKDOWN,
@@ -75,9 +76,7 @@ const StepManager = () => {
         return (
           <StepFour
             gameData={gameData}
-            onSubmit={(value) =>
-              dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
-            }
+            onSubmit={dispatch({ type: ACTION_STEP_FORWARD })}
             onStepBack={handleStepBack}
           />
         );
