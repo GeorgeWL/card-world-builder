@@ -82,3 +82,8 @@ th:nth-child(1) {
 td:nth-child(1) {
   border-right: none;
 }
+.w-md-editor {
+  position: relative;
+  width: 100%;
+  max-width: 95vw;
+}
