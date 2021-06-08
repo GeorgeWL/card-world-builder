@@ -68,8 +68,12 @@ const StepManager = () => {
         return (
           <StepThree
             gameData={gameData}
-            onSubmit={(value) => {
-              dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value });
+            onSubmit={(value, details) => {
+              dispatch({
+                type: ACTION_SUBMIT_CHARACTER_DETAILS,
+                value,
+                details
+              });
               dispatch({ type: ACTION_STEP_FORWARD });
             }}
             onStepBack={handleStepBack}
@@ -109,6 +113,7 @@ const StepManager = () => {
         dispatch({ action: ACTION_UPDATE_MARKDOWN, value })
       }
     >
+      {gameData?.deck.length}
       {createChildren(gameData.currentStep)}
     </StepContainer>
   );

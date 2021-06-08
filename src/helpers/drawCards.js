@@ -18,5 +18,5 @@ export function drawCardsFromDeck(count, excludeCards = []) {
   for (let index = 0; index < cardsToGenerate; index++) {
     tempCards.push(drawCardFromDeck([...excludeCards, ...tempCards]));
   }
-  return tempCards.filter(card => !!card);
+  return tempCards.filter((card) => !!card);
 }

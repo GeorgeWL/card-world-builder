@@ -99,7 +99,8 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
         id="characterCount"
       />
       <Button disabled={charactersToGenerate < 1} onClick={handleGenerateCards}>
-        Generate {charactersToGenerate} characters
+        {characters.length <= 0 ? "Generate" : "Replace"} {charactersToGenerate}{" "}
+        characters
       </Button>
       <Label>Cards</Label>
       <CardSet cards={characters} mini={true} />

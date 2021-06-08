@@ -18,12 +18,16 @@ const DetailItemTable = ({ character }) => (
       </thead>
       <tbody>
         {character?.details?.length &&
-          character.details.map((detail) => (
-            <DetailItemRow
-              key={"detail-" + detail.face + "-" + detail.suit}
-              detail={detail}
-            />
-          ))}
+          character.details.map((detail) =>
+            typeof detail !== "string" ? (
+              <DetailItemRow
+                key={"detail-" + detail.face + "-" + detail.suit}
+                detail={detail}
+              />
+            ) : (
+              <tr>{detail}</tr>
+            )
+          )}
       </tbody>
     </table>
   </details>

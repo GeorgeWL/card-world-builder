@@ -1,3 +1,6 @@
+import { CODEX_DECK } from "../data/codex";
+import { drawCardsFromDeck } from "../helpers/drawCards";
+
 export const ACTION_SUBMIT_GENRE = "SUBMIT_GENRE";
 export const ACTION_SUBMIT_CHARACTER_BASIC = "SUBMIT_BASIC_CHARACTERS";
 export const ACTION_SUBMIT_CHARACTER_DETAILS = "SUBMIT_DETAILED_CHARACTERS";
@@ -10,6 +13,7 @@ export const INITIAL_STATE = {
   currentStep: 0,
   genre: "",
   characters: [],
+  deck: CODEX_DECK,
   markdownNotes: ""
 };
 const gameReducer = (state, action) => {
@@ -22,7 +26,6 @@ const gameReducer = (state, action) => {
     case ACTION_SUBMIT_GENRE:
       return {
         ...state,
-        currentStep: 1,
         genre: action.value.genre
       };
     case ACTION_STEP_BACK:
@@ -38,11 +41,13 @@ const gameReducer = (state, action) => {
     case ACTION_SUBMIT_CHARACTER_BASIC:
       return {
         ...state,
-        characters: action.value
+        characters: action.value,
+        deck: drawCardsFromDeck(52, [...action.value])
       };
     case ACTION_SUBMIT_CHARACTER_DETAILS:
       return {
         ...state,
+        deck: drawCardsFromDeck(52, [...action.details, ...state.characters]),
         characters: [...action.value]
       };
     case ACTION_SUBMIT_WORLD_DETAILS:

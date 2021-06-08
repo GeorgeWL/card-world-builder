@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import styles from "../../styles/details.module.scss";
 import DetailTable from "../details/DetailTable";
 import StepForm from "./StepForm";
-const StepThree = ({ gameData, onSubmit, onUpdate, onStepBack }) => {
+const StepThree = ({ gameData, onSubmit, onStepBack }) => {
   const [existingCards, setExistingCards] = useState(gameData.characters);
+  const [details, setDetails] = useState([]);
   const [charactersLoaded, setCharacterLoaded] = useState([]);
   function handleItemLoad(character, newCards) {
     const currentExistingCards = [...existingCards, ...newCards];
@@ -12,11 +13,12 @@ const StepThree = ({ gameData, onSubmit, onUpdate, onStepBack }) => {
     const oldCharacters = charactersLoaded;
     const newCharacter = { ...character, details: newCards };
     oldCharacters.push(newCharacter);
+    setDetails(newCards);
     setCharacterLoaded(oldCharacters);
   }
 
   function handleSubmit() {
-    onSubmit(charactersLoaded);
+    onSubmit(charactersLoaded, details);
   }
 
   return (
