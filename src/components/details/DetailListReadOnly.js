@@ -1,3 +1,5 @@
+import CardCorner from "../card/CardCorner";
+import Header from "../Headers";
 import List from "../List";
 import DetailItemTable from "./DetailItemTable";
 
@@ -10,6 +12,15 @@ const DetailListReadOnly = ({ characters }) => (
       characters.map((character) => (
         <>
           <DetailItemTable character={character} />
+          {character.connection && (
+            <>
+              <Header>
+                <small>Connection</small>
+                {character.connection.aspect}
+                <CardCorner {...character.connection} isCard />
+              </Header>
+            </>
+          )}
         </>
       ))
     }
