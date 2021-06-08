@@ -5,13 +5,7 @@ import CardCorner from "./CardCorner";
 const CardSet = ({ mini = false, cards }) => {
   const cardsMap = cards?.map((card, index) =>
     mini ? (
-      <CardCorner
-        key={index}
-        suit={card.suit}
-        face={card.face}
-        align="row"
-        isCard={true}
-      />
+      <CardCorner key={index} suit={card.suit} face={card.face} isCard={true} />
     ) : (
       <Card {...card} key={index} />
     )

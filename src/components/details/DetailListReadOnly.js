@@ -7,7 +7,11 @@ const DetailListReadOnly = ({ characters }) => (
     listStyle="none"
     items={
       characters.length > 0 &&
-      characters.map((character) => <DetailItemTable character={character} />)
+      characters.map((character) => (
+        <>
+          <DetailItemTable character={character} />
+        </>
+      ))
     }
   />
 );

@@ -4,7 +4,7 @@ const DetailItemRow = ({ detail }) => (
   <tr>
     <td colSpan="2">
       <small>{detail.aspect}</small>
-      <CardCorner {...detail} align="row" isCard style={{ margin: "auto" }} />
+      <CardCorner {...detail} isCard style={{ margin: "auto" }} />
       {detail.label}
     </td>
     <td>

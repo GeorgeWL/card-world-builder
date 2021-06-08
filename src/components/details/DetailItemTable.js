@@ -6,7 +6,7 @@ import DetailItemRow from "./DetailItemRow";
 const DetailItemTable = ({ character }) => (
   <details className={styles.details} open>
     <summary className={classNames(styles.header, styles.summary)}>
-      <CardCorner {...character} align="row" isCard />
+      <CardCorner {...character} isCard />
       Character Details
     </summary>
     <table className={styles.list}>

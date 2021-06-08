@@ -78,7 +78,6 @@ const StepTwo = ({ onSubmit, onStepBack }) => {
             {EXAMPLE_CARDS.map((card, index) => (
               <CardCorner
                 key={index}
-                align="row"
                 face={card.face}
                 suit={card.suit}
                 isCard={true}
