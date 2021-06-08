@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useState } from "react";
 import styles from "../../styles/details.module.scss";
-import DetailList from "../details/DetailList";
+import DetailTable from "../details/DetailTable";
 import StepForm from "./StepForm";
 const StepThree = ({ gameData, onSubmit, onUpdate, onStepBack }) => {
   const [existingCards, setExistingCards] = useState(gameData.characters);
@@ -21,8 +21,6 @@ const StepThree = ({ gameData, onSubmit, onUpdate, onStepBack }) => {
 
   return (
     <StepForm
-      // disableSubmit={!genreSelection || genreSelection.length < 1}
-      // showSubmit={choiceStep !== 0}
       showCancel={true}
       onSubmit={handleSubmit}
       onReset={onStepBack}
@@ -55,7 +53,7 @@ const StepThree = ({ gameData, onSubmit, onUpdate, onStepBack }) => {
       <ul className={classNames(styles.list, styles.listInline)}>
         {gameData?.characters.length > 0 &&
           gameData?.characters?.map((character) => (
-            <DetailList
+            <DetailTable
               key={"character-" + character.face + "-" + character.suit}
               character={character}
               existingCards={existingCards}
