@@ -113,7 +113,6 @@ const StepManager = () => {
         dispatch({ action: ACTION_UPDATE_MARKDOWN, value })
       }
     >
-      {gameData?.deck.length}
       {createChildren(gameData.currentStep)}
     </StepContainer>
   );
