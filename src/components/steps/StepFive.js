@@ -1,15 +1,10 @@
 import React from "react";
 import StepForm from "./StepForm";
-const StepFive = ({ onSubmit }) => {
-  function handleReset(evt) {}
-  function handleSubmit(evt) {}
+const StepFive = ({ onSubmit, onStepBack }) => {
   return (
     <StepForm
-      // disableSubmit={!genreSelection || genreSelection.length < 1}
-      // showSubmit={choiceStep !== 0}
-      // showCancel={choiceStep !== 0}
-      onSubmit={handleSubmit}
-      onReset={handleReset}
+      onSubmit={onSubmit}
+      onReset={onStepBack}
       header="Step Five"
       subheader="Connections"
     >

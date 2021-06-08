@@ -38,24 +38,20 @@ const gameReducer = (state, action) => {
     case ACTION_SUBMIT_CHARACTER_BASIC:
       return {
         ...state,
-        characters: action.value,
-        currentStep: state.currentStep + 1
+        characters: action.value
       };
     case ACTION_SUBMIT_CHARACTER_DETAILS:
       return {
         ...state,
-        characters: [...action.value],
-        currentStep: state.currentStep + 1
+        characters: [...action.value]
       };
     case ACTION_SUBMIT_WORLD_DETAILS:
       return {
-        ...state,
-        currentStep: state.currentStep + 1
+        ...state
       };
     case ACTION_SUBMIT_CONNECTIONS:
       return {
-        ...state,
-        currentStep: state.currentStep + 1
+        ...state
       };
     default:
       return { ...state };

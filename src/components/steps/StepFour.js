@@ -1,5 +1,6 @@
 import React from "react";
 import DetailListReadOnly from "../details/DetailListReadOnly";
+import Header from "../Headers";
 import StepForm from "./StepForm";
 
 const StepFour = ({ gameData, onSubmit, onStepBack }) => {
@@ -47,6 +48,12 @@ const StepFour = ({ gameData, onSubmit, onStepBack }) => {
       <p>
         Get your Notes and start planning! Here's your character prompts so far.
       </p>
+      {!!gameData.genre && (
+        <Header headerLevel="h2">
+          <small>Genre</small>
+          {gameData.genre}
+        </Header>
+      )}
       <DetailListReadOnly characters={gameData.characters} />
     </StepForm>
   );

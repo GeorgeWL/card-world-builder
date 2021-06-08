@@ -6,6 +6,7 @@ import gameReducer, {
   ACTION_SUBMIT_CHARACTER_DETAILS,
   ACTION_UPDATE_MARKDOWN,
   ACTION_SUBMIT_GENRE,
+  ACTION_SUBMIT_CONNECTIONS,
   INITIAL_STATE
 } from "../../reducers/gameReducer";
 import ErrorMessage from "../ErrorMessage";
@@ -47,15 +48,19 @@ const StepManager = () => {
       case 0:
         return (
           <StepOne
-            onSubmit={(value) => dispatch({ type: ACTION_SUBMIT_GENRE, value })}
+            onSubmit={(value) => {
+              dispatch({ type: ACTION_SUBMIT_GENRE, value });
+              dispatch({ type: ACTION_STEP_FORWARD });
+            }}
           />
         );
       case 1:
         return (
           <StepTwo
-            onSubmit={(value) =>
-              dispatch({ type: ACTION_SUBMIT_CHARACTER_BASIC, value })
-            }
+            onSubmit={(value) => {
+              dispatch({ type: ACTION_SUBMIT_CHARACTER_BASIC, value });
+              dispatch({ type: ACTION_STEP_FORWARD });
+            }}
             onStepBack={handleStepBack}
           />
         );
@@ -63,12 +68,10 @@ const StepManager = () => {
         return (
           <StepThree
             gameData={gameData}
-            onSubmit={(value) =>
-              dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
-            }
-            onUpdate={(value) =>
-              dispatch({ type: ACTION_UPDATE_MARKDOWN, value })
-            }
+            onSubmit={(value) => {
+              dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value });
+              dispatch({ type: ACTION_STEP_FORWARD });
+            }}
             onStepBack={handleStepBack}
           />
         );
@@ -76,7 +79,7 @@ const StepManager = () => {
         return (
           <StepFour
             gameData={gameData}
-            onSubmit={dispatch({ type: ACTION_STEP_FORWARD })}
+            onSubmit={() => dispatch({ type: ACTION_STEP_FORWARD })}
             onStepBack={handleStepBack}
           />
         );
@@ -85,8 +88,9 @@ const StepManager = () => {
           <StepFive
             gameData={gameData}
             onSubmit={(value) =>
-              dispatch({ type: ACTION_SUBMIT_CHARACTER_DETAILS, value })
+              dispatch({ type: ACTION_SUBMIT_CONNECTIONS, value })
             }
+            onStepBack={handleStepBack}
           />
         );
       default:
