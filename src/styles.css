@@ -9,7 +9,9 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  max-width: 95vw;
 }
+
 summary,
 button,
 label[for] {
@@ -85,5 +87,4 @@ td:nth-child(1) {
 .w-md-editor {
   position: relative;
   width: 100%;
-  max-width: 95vw;
 }
